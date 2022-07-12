@@ -11,9 +11,11 @@
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		min-height: 3rem;
+		min-height: 20vh;
 
-		margin: 2rem auto;
+		margin: 2rem auto 0;
 		padding: 2rem 1rem;
+		background-color: var(--background-color);
+		color: var(--text-primary);
 	}
 </style>

@@ -16,6 +16,7 @@
 <style>
 	nav {
 		margin: 1rem 0;
+		padding: 1rem 0;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		justify-items: center;
