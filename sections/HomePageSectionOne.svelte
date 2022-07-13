@@ -29,7 +29,7 @@
 	<div class="text-container">
 		<h1>Vidal</h1>
 		<p>A strong online presence is important</p>
-		<p>These days its vital</p>
+		<p>These days it's vital</p>
 		<p>Meet Vidal</p>
 	</div>
 	{#if model}
@@ -44,6 +44,14 @@
 				<SC.PointLight position={[0, 7, 1]} />
 				<SC.AmbientLight />
 				<SC.PerspectiveCamera position={[0, 0, 5]} />
+				<SC.OrbitControls
+					enableDamping
+					maxPolarAngle={Math.PI * 0.5}
+					minPolarAngle={Math.PI * 0.5}
+					enableZoom={false}
+					enablePan={false}
+					enableRotate
+				/>
 			</SC.Canvas>
 		</div>
 	{/if}
@@ -63,6 +71,7 @@
 		position: relative;
 		grid-column: 1 / -1;
 		height: 100vh;
+		clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
 	}
 
 	.text-container {

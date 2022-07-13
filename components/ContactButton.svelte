@@ -23,15 +23,33 @@
 {/if}
 
 <style>
+	@keyframes rotate {
+		to {
+			--angle: 360deg;
+		}
+	}
+
+	@property --angle {
+		syntax: '<angle>';
+		initial-value: 0deg;
+		inherits: false;
+	}
+
 	.contact-button {
-		border-radius: var(--border-radius);
 		background-color: var(--background-color);
 		padding: 0.7rem 1rem;
 		color: var(--text-primary);
-		border: 1px solid var(--text-primary);
+
+		border: 2px solid;
+		border-image-slice: 1;
+		border-width: 2px;
+		border-image-source: conic-gradient(from var(--angle), #8b5cf6, #db2777, #f5f3ff);
+		animation: 3s rotate linear infinite;
 	}
 	.contact-button:hover {
 		cursor: pointer;
+		transform: scale(1.05);
+		border-image-source: conic-gradient(from var(--angle), #f43f5e, #e11d48, #fff1f2);
 	}
 
 	/* form and overlay */

@@ -20,7 +20,7 @@
 	loader.setDRACOLoader(dracoLoader);
 
 	onMount(() => {
-		loader.load('../../static/earth.glb', (gltf) => {
+		loader.load('../../static/phone.glb', (gltf) => {
 			model = gltf;
 		});
 	});
@@ -38,10 +38,15 @@
 	{#if model}
 		<div class="three-d">
 			<SC.Canvas antialias alpha>
-				<SC.Primitive object={model.scene} position={[0, 0, 0]} />
-				<SC.PointLight position={[0, 0, 6]} />
+				<SC.Primitive
+					scale={1.5}
+					object={model.scene}
+					rotation={[0, 0, Math.PI * 0.1]}
+					position={[0, 0, 0]}
+				/>
+				<SC.PointLight position={[1, 4, 4]} />
 				<SC.AmbientLight />
-				<SC.PerspectiveCamera position={[0, 0, 10]} />
+				<SC.PerspectiveCamera position={[0, 0, 4]} />
 			</SC.Canvas>
 		</div>
 	{/if}
