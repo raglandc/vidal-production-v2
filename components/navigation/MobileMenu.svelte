@@ -19,7 +19,7 @@
 		<div class="menu-container">
 			<div class="menu-header">
 				<h1>Menu</h1>
-				<p on:click={handleClick}>X</p>
+				<p class="close-menu-button" on:click={handleClick}>X</p>
 			</div>
 			<a href="/" on:click={handleClick}>Home</a>
 			<a href="/blog" on:click={handleClick}>Blog</a>
@@ -33,6 +33,10 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+
+	.menu:hover {
+		cursor: pointer;
 	}
 
 	@media only screen and (min-width: 700px) {
@@ -88,5 +92,9 @@
 		text-align: center;
 		width: 100%;
 		padding: 1rem 0;
+	}
+
+	.close-menu-button:hover {
+		cursor: pointer;
 	}
 </style>

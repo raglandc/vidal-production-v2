@@ -11,7 +11,7 @@
 		margin: 0 auto;
 	}
 	a {
-		margin: 0 1rem;
+		margin: 0 0.5rem;
 		padding: 0.5rem;
 		text-decoration: none;
 		color: var(--button);

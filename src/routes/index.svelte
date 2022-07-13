@@ -4,11 +4,15 @@
 	import * as SC from 'svelte-cubed';
 	import { DRACOLoader } from 'three/examples/jsm/loaders/DracoLoader.js';
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+	import { inview } from 'svelte-inview';
+	import type { ObserverEventDetails, Options } from 'svelte-inview';
+
+	let isInView: boolean;
+	const options: Options = {
+		rootMargin: '0px'
+	};
 
 	let model: any;
-	console.log(window);
-	let cameraHeight: number;
-
 	const dracoLoader = new DRACOLoader();
 	const loader = new GLTFLoader();
 	dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
@@ -21,9 +25,7 @@
 		});
 	});
 
-	SC.onFrame(() => {
-		cameraHeight = window.scrollY;
-	});
+	// SC.onFrame(() => {});
 </script>
 
 <section class="section-one">
@@ -34,23 +36,23 @@
 		<p>Meet Vidal</p>
 	</div>
 </section>
-<section>
+<section use:inview={options} on:change={(event) => console.log(event.detail.observer)}>
 	<p class="three-d-span">3D</p>
 	<h1>Dream</h1>
 	<h1>Design</h1>
 	<h1>Develop</h1>
 	<p>We build fast, modern and creative websites</p>
 	<p>Websites that work on any device size</p>
-	<!-- <div class="three-d">
-		<SC.Canvas antialias={true} alpha={true}>
-			{#if model}
-				<SC.Primitive object={model.scene} position={[0, -3, 0]} />
-			{/if}
-			<SC.PointLight position={[0, 0, 6]} />
-			<SC.AmbientLight />
-			<SC.PerspectiveCamera position={[0, 0, 10]} />
-		</SC.Canvas> 
-	</div> -->
+	{#if model}
+		<div class="three-d">
+			<SC.Canvas antialias alpha>
+				<SC.Primitive object={model.scene} position={[0, 0, 0]} />
+				<SC.PointLight position={[0, 0, 6]} />
+				<SC.AmbientLight />
+				<SC.PerspectiveCamera position={[0, 0, 10]} />
+			</SC.Canvas>
+		</div>
+	{/if}
 </section>
 <section>
 	<h1>About</h1>
@@ -62,12 +64,17 @@
 
 <style>
 	.three-d {
+		margin: 0;
+		padding: 0;
+		position: relative;
+		height: 100%;
+		width: 100%;
 		z-index: -4;
 	}
 
 	section {
 		grid-column: 2 / -2;
-		height: 95vh;
+		height: 100vh;
 	}
 
 	.section-one {
@@ -76,15 +83,15 @@
 		justify-content: center;
 		align-items: center;
 		text-align: center;
+		height: 90vh;
 	}
 	h1 {
 		margin: 0.5rem;
-		font-size: 9rem;
+		font-size: 5rem;
 		color: var(--text-primary);
 	}
 	p {
-		margin: 1rem;
-		font-size: 3rem;
+		font-size: 2rem;
 		color: var(--text-secondary);
 	}
 
