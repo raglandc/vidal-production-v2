@@ -4,6 +4,13 @@
 	import * as SC from 'svelte-cubed';
 	import { DRACOLoader } from 'three/examples/jsm/loaders/DracoLoader.js';
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+	import { inview } from 'svelte-inview';
+	import type { ObserverEventDetails, Options } from 'svelte-inview';
+
+	let isInView: boolean;
+	const options: Options = {
+		rootMargin: '0px'
+	};
 
 	let model: any;
 	const dracoLoader = new DRACOLoader();
@@ -18,39 +25,30 @@
 		});
 	});
 
-	let spin = 0;
-
-	SC.onFrame(() => {
-		spin += 0.001;
-	});
+	// SC.onFrame(() => {});
 </script>
 
-<section>
-	<div class="text-container">
-		<h1>Vidal</h1>
-		<p>A strong online presence is important</p>
-		<p>These days its vital</p>
-		<p>Meet Vidal</p>
-	</div>
+<section use:inview={options} on:change={(event) => console.log(event.detail.observer)}>
+	<p class="three-d-span">3D</p>
+	<h1>Dream</h1>
+	<h1>Design</h1>
+	<h1>Develop</h1>
+	<p>We build fast, modern and creative websites</p>
+	<p>Websites that work on any device size</p>
 	{#if model}
-		<div class="three-scene">
+		<div class="three-d">
 			<SC.Canvas antialias alpha>
-				<SC.Primitive
-					scale={1.2}
-					object={model.scene}
-					position={[0, -1, 0]}
-					rotation={[0, spin, -Math.PI * 0.15]}
-				/>
-				<SC.PointLight position={[0, 7, 1]} />
+				<SC.Primitive object={model.scene} position={[0, 0, 0]} />
+				<SC.PointLight position={[0, 0, 6]} />
 				<SC.AmbientLight />
-				<SC.PerspectiveCamera position={[0, 0, 5]} />
+				<SC.PerspectiveCamera position={[0, 0, 10]} />
 			</SC.Canvas>
 		</div>
 	{/if}
 </section>
 
 <style>
-	.three-scene {
+	.three-d {
 		position: absolute;
 		top: 0%;
 		margin: 0;
@@ -59,25 +57,24 @@
 		width: 100%;
 		z-index: -4;
 	}
+
 	section {
 		position: relative;
-		grid-column: 1 / -1;
+		grid-column: 2 / -2;
 		height: 100vh;
 	}
 
-	.text-container {
-		margin: 25% auto;
-		text-align: center;
-	}
-
 	h1 {
-		font-size: 7rem;
 		margin: 0.5rem;
+		font-size: 5rem;
 		color: var(--text-primary);
 	}
-
 	p {
 		font-size: 2rem;
 		color: var(--text-secondary);
+	}
+
+	.three-d-span {
+		font-size: medium;
 	}
 </style>
