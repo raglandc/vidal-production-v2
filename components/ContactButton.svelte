@@ -44,7 +44,7 @@
 		border-image-slice: 1;
 		border-width: 2px;
 		border-image-source: conic-gradient(from var(--angle), #8b5cf6, #db2777, #f5f3ff);
-		animation: 3s rotate linear infinite;
+		animation: 4s rotate linear infinite;
 	}
 	.contact-button:hover {
 		cursor: pointer;

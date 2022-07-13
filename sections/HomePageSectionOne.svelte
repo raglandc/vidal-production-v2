@@ -33,6 +33,7 @@
 		<p>Meet Vidal</p>
 	</div>
 	{#if model}
+		<div class="location-point" />
 		<div class="three-scene">
 			<SC.Canvas antialias alpha>
 				<SC.Primitive
@@ -58,6 +59,8 @@
 </section>
 
 <style>
+	.location-point {
+	}
 	.three-scene {
 		position: absolute;
 		top: 0%;
