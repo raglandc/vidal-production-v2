@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, tick } from 'svelte';
+	import { getContext, onMount } from 'svelte';
 	import * as THREE from 'three';
 	import * as SC from 'svelte-cubed';
 	import { DRACOLoader } from 'three/examples/jsm/loaders/DracoLoader.js';
@@ -47,29 +47,29 @@
 		<p>Meet Vidal</p> -->
 	</div>
 	<div bind:this={ref} class="location-point visible" />
-	{#if model}
-		<div class="three-scene">
-			<SC.Canvas antialias alpha>
+	<div class="three-scene">
+		<SC.Canvas antialias alpha>
+			{#if model}
 				<SC.Primitive
 					scale={1.2}
 					object={model.scene}
 					position={[0, -1, 0]}
 					rotation={[0, spin, -Math.PI * 0.15]}
 				/>
-				<SC.PointLight position={[0, 7, 1]} />
-				<SC.AmbientLight />
-				<SC.PerspectiveCamera position={[0, 0, 5]} />
-				<SC.OrbitControls
-					enableDamping
-					maxPolarAngle={Math.PI * 0.5}
-					minPolarAngle={Math.PI * 0.5}
-					enableZoom={false}
-					enablePan={false}
-					enableRotate
-				/>
-			</SC.Canvas>
-		</div>
-	{/if}
+			{/if}
+			<SC.PointLight position={[0, 7, 1]} />
+			<SC.AmbientLight />
+			<SC.PerspectiveCamera position={[0, 0, 5]} />
+			<SC.OrbitControls
+				enableDamping
+				maxPolarAngle={Math.PI * 0.5}
+				minPolarAngle={Math.PI * 0.5}
+				enableZoom={false}
+				enablePan={false}
+				enableRotate
+			/>
+		</SC.Canvas>
+	</div>
 </section>
 
 <style>
