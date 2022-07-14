@@ -4,6 +4,7 @@
 	import * as SC from 'svelte-cubed';
 	import { DRACOLoader } from 'three/examples/jsm/loaders/DracoLoader.js';
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+	import { element } from 'svelte/internal';
 
 	let model: any;
 	const dracoLoader = new DRACOLoader();
@@ -21,19 +22,19 @@
 	let spin = 0;
 
 	SC.onFrame(() => {
-		spin += 0.001;
+		// spin += 0.001;
 	});
 </script>
 
 <section>
 	<div class="text-container">
-		<h1>Vidal</h1>
-		<p>A strong online presence is important</p>
+		<!-- <h1>Vidal</h1> -->
+		<!-- <p>A strong online presence is important</p>
 		<p>These days it's vital</p>
-		<p>Meet Vidal</p>
+		<p>Meet Vidal</p> -->
 	</div>
 	{#if model}
-		<div class="location-point" />
+		<div class="location-point visible" />
 		<div class="three-scene">
 			<SC.Canvas antialias alpha>
 				<SC.Primitive
@@ -59,8 +60,63 @@
 </section>
 
 <style>
-	.location-point {
+	.location-point.visible {
+		transform: scale(1, 1);
 	}
+
+	.location-point {
+		transform: scale(0, 0);
+		transition: transform 300ms;
+		margin: 0;
+		padding: 0;
+		width: 1.6rem;
+		height: 1.6rem;
+		position: absolute;
+		top: 51.5%;
+		left: 42.2%;
+		border-radius: 50%;
+	}
+
+	.location-point:before {
+		animation: location-point 2.4s 2.4s ease-out;
+		border: 3px solid var(--text-primary);
+	}
+	.location-point:after {
+		animation: location-point 2.4s 1.9s ease-in;
+		border: 3px solid var(--text-secondary);
+	}
+	.location-point:before,
+	.location-point:after {
+		content: '';
+		width: 100%;
+		height: 100%;
+		display: block;
+		border-radius: 50%;
+		background: var(--background-color);
+		opacity: 0;
+		animation-iteration-count: infinite;
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+	}
+
+	@keyframes location-point {
+		0% {
+			-webkit-transform: scale(0.1, 0.1);
+			opacity: 0;
+		}
+		50% {
+			opacity: 1;
+		}
+		100% {
+			-webkit-transform: scale(1.2, 1.2);
+			opacity: 0;
+		}
+	}
+
 	.three-scene {
 		position: absolute;
 		top: 0%;
