@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import * as THREE from 'three';
 	import * as SC from 'svelte-cubed';
 	import { DRACOLoader } from 'three/examples/jsm/loaders/DracoLoader.js';
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-	import { element } from 'svelte/internal';
 
 	let model: any;
 	const dracoLoader = new DRACOLoader();
@@ -13,28 +12,42 @@
 	dracoLoader.setDecoderConfig({ type: 'js' });
 	loader.setDRACOLoader(dracoLoader);
 
+	let points: any;
+	let ref: any;
+
 	onMount(() => {
 		loader.load('../../static/earth.glb', (gltf) => {
 			model = gltf;
 		});
+
+		points = [
+			{
+				position: new THREE.Vector3(1.55, 0.3, -0.6),
+				element: ref
+			}
+		];
 	});
 
 	let spin = 0;
 
 	SC.onFrame(() => {
 		// spin += 0.001;
+
+		for (const point of points) {
+			const screenPosition = point.position.clone();
+		}
 	});
 </script>
 
-<section>
+<section class="section-one">
 	<div class="text-container">
 		<!-- <h1>Vidal</h1> -->
 		<!-- <p>A strong online presence is important</p>
 		<p>These days it's vital</p>
 		<p>Meet Vidal</p> -->
 	</div>
+	<div bind:this={ref} class="location-point visible" />
 	{#if model}
-		<div class="location-point visible" />
 		<div class="three-scene">
 			<SC.Canvas antialias alpha>
 				<SC.Primitive
