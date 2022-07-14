@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getContext, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 	import * as THREE from 'three';
 	import * as SC from 'svelte-cubed';
 	import { DRACOLoader } from 'three/examples/jsm/loaders/DracoLoader.js';
@@ -14,11 +14,16 @@
 
 	let points: any;
 	let ref: any;
+	let canvas: any;
 
 	onMount(() => {
 		loader.load('../../static/earth.glb', (gltf) => {
 			model = gltf;
 		});
+
+		const { object } = canvas.$$.ctx[0].camera;
+
+		console.log(object);
 
 		points = [
 			{
@@ -35,6 +40,7 @@
 
 		for (const point of points) {
 			const screenPosition = point.position.clone();
+			// screenPosition.project(camera);
 		}
 	});
 </script>
@@ -48,7 +54,10 @@
 	</div>
 	<div bind:this={ref} class="location-point visible" />
 	<div class="three-scene">
-		<SC.Canvas antialias alpha>
+		<SC.Canvas bind:this={canvas} antialias alpha>
+			<SC.PerspectiveCamera position={[0, 0, 5]} />
+			<SC.PointLight position={[0, 7, 1]} />
+			<SC.AmbientLight />
 			{#if model}
 				<SC.Primitive
 					scale={1.2}
@@ -57,17 +66,14 @@
 					rotation={[0, spin, -Math.PI * 0.15]}
 				/>
 			{/if}
-			<SC.PointLight position={[0, 7, 1]} />
-			<SC.AmbientLight />
-			<SC.PerspectiveCamera position={[0, 0, 5]} />
-			<SC.OrbitControls
-				enableDamping
-				maxPolarAngle={Math.PI * 0.5}
-				minPolarAngle={Math.PI * 0.5}
-				enableZoom={false}
-				enablePan={false}
-				enableRotate
-			/>
+			<!-- <SC.OrbitControls
+					enableDamping
+					maxPolarAngle={Math.PI * 0.5}
+					minPolarAngle={Math.PI * 0.5}
+					enableZoom={false}
+					enablePan={false}
+					enableRotate
+					/> -->
 		</SC.Canvas>
 	</div>
 </section>
@@ -151,7 +157,7 @@
 		text-align: center;
 	}
 
-	h1 {
+	/* h1 {
 		font-size: 7rem;
 		margin: 0.5rem;
 		color: var(--text-primary);
@@ -160,5 +166,5 @@
 	p {
 		font-size: 2rem;
 		color: var(--text-secondary);
-	}
+	} */
 </style>
