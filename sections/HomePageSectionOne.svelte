@@ -13,6 +13,7 @@
 	loader.setDRACOLoader(dracoLoader);
 
 	let points: any;
+	let locationVector: THREE.Vector3;
 	let ref: any;
 	let canvas: any;
 
@@ -21,9 +22,12 @@
 			model = gltf;
 		});
 
-		const { object } = canvas.$$.ctx[0].camera;
+		//i have found the camera through context but it says null
 
-		console.log(object);
+		if (canvas) {
+			// canvas.$$.ctx[0].camera.object = new THREE.PerspectiveCamera();
+			locationVector = canvas.$$.ctx[0].camera.object.position;
+		}
 
 		points = [
 			{
@@ -36,11 +40,12 @@
 	let spin = 0;
 
 	SC.onFrame(() => {
+		console.log(locationVector);
 		// spin += 0.001;
 
 		for (const point of points) {
 			const screenPosition = point.position.clone();
-			// screenPosition.project(camera);
+			// screenPosition.project(locationVector);
 		}
 	});
 </script>

@@ -7,6 +7,9 @@ const config = {
 		fs: {
 			allow: ['..']
 		}
+	},
+	ssr: {
+		noExternal: ['three']
 	}
 };
 
