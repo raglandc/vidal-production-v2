@@ -1,4 +1,7 @@
 <script>
+	import HomeIcon from 'svelte-icons/fa/FaHome.svelte';
+	import PenIcon from 'svelte-icons/fa/FaPenFancy.svelte';
+	import CodeIcon from 'svelte-icons/fa/FaCode.svelte';
 	import { slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 
@@ -21,9 +24,22 @@
 				<h1>Menu</h1>
 				<p class="close-menu-button" on:click={handleClick}>X</p>
 			</div>
-			<a href="/" on:click={handleClick}>Home</a>
-			<a href="/blog" on:click={handleClick}>Blog</a>
-			<a href="/projects" on:click={handleClick}>Projects</a>
+			<a href="/" on:click={handleClick}
+				><span>Home</span>
+				<div class="icon"><HomeIcon /></div></a
+			>
+			<a href="/blog" on:click={handleClick}>
+				<span> Blog </span>
+				<div class="icon">
+					<PenIcon />
+				</div>
+			</a>
+			<a href="/projects" on:click={handleClick}>
+				<span>Projects</span>
+				<div class="icon">
+					<CodeIcon />
+				</div>
+			</a>
 		</div>
 	</div>
 {/if}
@@ -75,24 +91,35 @@
 		color: var(--background-color);
 	}
 
-	.menu-header {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
+	.menu-container {
+		display: grid;
+		grid-template-columns: 10% repeat(4, 1fr) 10%;
 	}
 
-	.menu-container {
-		width: 100%;
-		height: 90%;
+	.menu-header {
+		background-color: var(--background-color);
+		color: var(--text-primary);
+		height: 8rem;
 		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
+		justify-content: space-between;
+		align-items: center;
+		grid-column: 1 / -1;
+		padding: 3rem;
 	}
+
 	a {
-		font-size: 3rem;
-		text-align: center;
-		width: 100%;
-		padding: 1rem 0;
+		height: 8rem;
+		font-size: 2.5rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		grid-column: 2 / -2;
+	}
+
+	.icon {
+		display: inline-block;
+		width: 2.5rem;
+		height: 2.5rem;
 	}
 
 	.close-menu-button:hover {
