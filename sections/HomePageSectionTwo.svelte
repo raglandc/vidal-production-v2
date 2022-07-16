@@ -9,10 +9,11 @@
 
 	let isInView: boolean;
 	const options: Options = {
-		rootMargin: '0px'
+		rootMargin: '35px'
 	};
 
-	let model: any;
+	let phoneModel: any;
+	let monitorModel: any;
 	const dracoLoader = new DRACOLoader();
 	const loader = new GLTFLoader();
 	dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
@@ -20,9 +21,30 @@
 	loader.setDRACOLoader(dracoLoader);
 
 	onMount(() => {
-		loader.load('../../static/phone.glb', (gltf) => {
-			model = gltf;
-		});
+		loader.load(
+			'../../static/phone.glb',
+			(gltf) => {
+				phoneModel = gltf;
+			},
+			() => {
+				console.log('Phone model in progress...');
+			},
+			(error) => {
+				console.log('ERROR: ', error);
+			}
+		);
+		loader.load(
+			'../../static/monitor.glb',
+			(gltf) => {
+				monitorModel = gltf;
+			},
+			() => {
+				console.log('Monitor model in progress...');
+			},
+			(error) => {
+				console.log('ERROR: ', error);
+			}
+		);
 	});
 
 	let spin = 0;
@@ -43,12 +65,18 @@
 			<SC.PerspectiveCamera position={[0, 0, 4]} />
 			<SC.PointLight position={[1, 4, 4]} />
 			<SC.AmbientLight />
-			{#if model}
+			{#if phoneModel && monitorModel}
 				<SC.Primitive
 					scale={1.5}
-					object={model.scene}
+					object={phoneModel.scene}
 					rotation={[0, spin, Math.PI * 0.1]}
 					position={[0, 0, 0]}
+				/>
+				<SC.Primitive
+					scale={0.5}
+					object={monitorModel.scene}
+					rotation={[0, 0, 0]}
+					position={[0, -1, 0]}
 				/>
 			{/if}
 		</SC.Canvas>
