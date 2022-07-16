@@ -20,11 +20,11 @@
 	<div class="overlay" on:click={handleShowContact} transition:fly />
 	<div class="contact-form-container" transition:fly>
 		<div class="contact-header">
-			<h1>Reach Out</h1>
+			<h1>Say Hi 👋</h1>
 			<button class="close-form-button" on:click={handleShowContact}>x</button>
 		</div>
 		<div class="form-content">
-			<p>If you like what you see, feel free to get in touch.</p>
+			<p>If you would like to follow my work or get in touch</p>
 			<ul>
 				<li>
 					<a href="https://www.instagram.com/chris_ragland" target="_blank" rel="norefferer">
