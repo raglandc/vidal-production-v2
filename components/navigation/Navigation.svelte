@@ -2,7 +2,7 @@
 	import VidalLogo from '../ui/VidalLogo.svelte';
 	import DesktopMenu from './DesktopMenu.svelte';
 	import MobileMenu from './MobileMenu.svelte';
-	import ContactButton from '../ContactButton.svelte';
+	import ContactButtonAndForm from '../ContactButtonAndForm.svelte';
 </script>
 
 <nav>
@@ -10,7 +10,7 @@
 	<MobileMenu />
 	<VidalLogo />
 	<DesktopMenu />
-	<ContactButton />
+	<ContactButtonAndForm />
 </nav>
 
 <style>

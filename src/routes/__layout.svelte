@@ -21,6 +21,7 @@
 		--border-radius: 8px;
 	}
 	:global(html) {
+		position: relative;
 		font-size: 62.5%;
 		font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
 			Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
