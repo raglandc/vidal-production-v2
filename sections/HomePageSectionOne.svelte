@@ -1,27 +1,37 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type * as THREE from 'three';
+	import * as THREE from 'three';
 	import * as SC from 'svelte-cubed';
 	import { DRACOLoader } from 'three/examples/jsm/loaders/DracoLoader.js';
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-	let model: any;
 	const dracoLoader = new DRACOLoader();
 	const loader = new GLTFLoader();
 	dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
 	dracoLoader.setDecoderConfig({ type: 'js' });
 	loader.setDRACOLoader(dracoLoader);
 
-	let ref: any;
-	let canvas: SC.Canvas;
+	let model: any; //chor: type GLTF or Object 3d
 	//the below code is for location point when applicable
+	let ref: HTMLElement;
+	let canvas: SC.Canvas;
 	let points: any;
 	let locationVector: THREE.Vector3 | any; //chor: remove any once we find PV
 
 	onMount(() => {
-		loader.load('../../static/earth.glb', (gltf) => {
-			model = gltf;
-		});
+		//Load the GLB file for the scene
+		loader.load(
+			'../../static/earth.glb',
+			(gltf) => {
+				model = gltf;
+			},
+			() => {
+				console.log('GLB Loading in Progress...');
+			},
+			(error) => {
+				console.log('ERROR: ', error);
+			}
+		);
 
 		const mapIter = canvas.$$.context.values();
 		mapIter.next();
@@ -33,19 +43,22 @@
 		// console.log(locationVector);
 		// }
 
-		// points = [
-		// {
-		// position: new THREE.Vector3(1.55, 0.3, -0.6),
-		// element: ref
-		// }
-		// ];
+		points = [
+			{
+				position: new THREE.Vector3(1.55, 0.3, -0.6),
+				element: ref
+			}
+		];
 	});
 
+	if (model) {
+		console.log(model);
+	}
 	console.log(locationVector);
 	let spin = 0;
 
 	SC.onFrame(() => {
-		// spin += 0.001;
+		spin += 0.001;
 		//The below code is for location point when applicable
 		// for (const point of points) {
 		// 	const screenPosition = point.position.clone();
@@ -56,10 +69,10 @@
 
 <section class="section-one">
 	<div class="text-container">
-		<!-- <h1>Vidal</h1> -->
-		<!-- <p>A strong online presence is important</p>
+		<h1>Vidal</h1>
+		<p>A strong online presence is important</p>
 		<p>These days it's vital</p>
-		<p>Meet Vidal</p> -->
+		<p>Meet Vidal</p>
 	</div>
 	<div bind:this={ref} class="location-point visible" />
 	<div class="three-scene">
@@ -166,7 +179,7 @@
 		text-align: center;
 	}
 
-	/* h1 {
+	h1 {
 		font-size: 7rem;
 		margin: 0.5rem;
 		color: var(--text-primary);
@@ -175,5 +188,5 @@
 	p {
 		font-size: 2rem;
 		color: var(--text-secondary);
-	} */
+	}
 </style>

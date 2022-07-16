@@ -25,7 +25,10 @@
 		});
 	});
 
-	// SC.onFrame(() => {});
+	let spin = 0;
+	SC.onFrame(() => {
+		spin += 0.005;
+	});
 </script>
 
 <section use:inview={options} on:change={(event) => console.log(event.detail.observer)}>
@@ -44,7 +47,7 @@
 				<SC.Primitive
 					scale={1.5}
 					object={model.scene}
-					rotation={[0, 0, Math.PI * 0.1]}
+					rotation={[0, spin, Math.PI * 0.1]}
 					position={[0, 0, 0]}
 				/>
 			{/if}
