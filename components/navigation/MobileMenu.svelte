@@ -19,28 +19,26 @@
 
 {#if showMenu}
 	<div class="container-side-drawer" transition:slide={{ easing: quintOut }}>
-		<div class="menu-container">
-			<div class="menu-header">
-				<h1>Menu</h1>
-				<p class="close-menu-button" on:click={handleClick}>X</p>
-			</div>
-			<a href="/" on:click={handleClick}
-				><span>Home</span>
-				<div class="icon"><HomeIcon /></div></a
-			>
-			<a href="/blog" on:click={handleClick}>
-				<span> Blog </span>
-				<div class="icon">
-					<PenIcon />
-				</div>
-			</a>
-			<a href="/projects" on:click={handleClick}>
-				<span>Projects</span>
-				<div class="icon">
-					<CodeIcon />
-				</div>
-			</a>
+		<div class="menu-header">
+			<h1>Menu</h1>
+			<p class="close-menu-button" on:click={handleClick}>X</p>
 		</div>
+		<a href="/" on:click={handleClick}
+			><span>Home</span>
+			<div class="icon"><HomeIcon /></div></a
+		>
+		<a href="/blog" on:click={handleClick}>
+			<span> Blog </span>
+			<div class="icon">
+				<PenIcon />
+			</div>
+		</a>
+		<a href="/projects" on:click={handleClick}>
+			<span>Projects</span>
+			<div class="icon">
+				<CodeIcon />
+			</div>
+		</a>
 	</div>
 {/if}
 
@@ -87,33 +85,33 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: var(--text-primary);
-		color: var(--background-color);
-	}
-
-	.menu-container {
-		display: grid;
-		grid-template-columns: 10% repeat(4, 1fr) 10%;
+		background-color: var(--background-color);
+		color: var(--text-primary);
 	}
 
 	.menu-header {
-		background-color: var(--background-color);
-		color: var(--text-primary);
+		width: 100%;
 		height: 8rem;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		grid-column: 1 / -1;
 		padding: 3rem;
+		border-bottom: 2px solid var(--text-secondary);
 	}
 
 	a {
-		height: 8rem;
-		font-size: 2.5rem;
+		width: 100%;
+		height: 6rem;
+		font-size: 2rem;
+		padding: 0 10%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		grid-column: 2 / -2;
+		border-bottom: 2px solid var(--text-secondary);
+	}
+
+	a:hover {
+		background-color: var(--text-secondary);
 	}
 
 	.icon {
