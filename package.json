@@ -33,6 +33,7 @@
 	"type": "module",
 	"dependencies": {
 		"svelte-cubed": "^0.2.1",
+		"svelte-icons": "^2.1.0",
 		"svelte-inview": "^3.0.1",
 		"three": "^0.142.0"
 	}
