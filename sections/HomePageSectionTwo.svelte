@@ -35,21 +35,21 @@
 	<h1>Develop</h1>
 	<p>We build fast, modern and creative websites</p>
 	<p>Websites that work on any device size</p>
-	{#if model}
-		<div class="three-d">
-			<SC.Canvas antialias alpha>
+	<div class="three-d">
+		<SC.Canvas antialias alpha>
+			<SC.PerspectiveCamera position={[0, 0, 4]} />
+			<SC.PointLight position={[1, 4, 4]} />
+			<SC.AmbientLight />
+			{#if model}
 				<SC.Primitive
 					scale={1.5}
 					object={model.scene}
 					rotation={[0, 0, Math.PI * 0.1]}
 					position={[0, 0, 0]}
 				/>
-				<SC.PointLight position={[1, 4, 4]} />
-				<SC.AmbientLight />
-				<SC.PerspectiveCamera position={[0, 0, 4]} />
-			</SC.Canvas>
-		</div>
-	{/if}
+			{/if}
+		</SC.Canvas>
+	</div>
 </section>
 
 <style>

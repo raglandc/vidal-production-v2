@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import * as THREE from 'three';
+	import type * as THREE from 'three';
 	import * as SC from 'svelte-cubed';
 	import { DRACOLoader } from 'three/examples/jsm/loaders/DracoLoader.js';
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
@@ -12,41 +12,45 @@
 	dracoLoader.setDecoderConfig({ type: 'js' });
 	loader.setDRACOLoader(dracoLoader);
 
-	let points: any;
-	let locationVector: THREE.Vector3;
 	let ref: any;
-	let canvas: any;
+	let canvas: SC.Canvas;
+	//the below code is for location point when applicable
+	let points: any;
+	let locationVector: THREE.Vector3 | any; //chor: remove any once we find PV
 
 	onMount(() => {
 		loader.load('../../static/earth.glb', (gltf) => {
 			model = gltf;
 		});
 
+		const mapIter = canvas.$$.context.values();
+		mapIter.next();
+		const ctx = mapIter.next().value;
+		locationVector = ctx.camera.position;
+
 		//i have found the camera through context but it says null
+		// if (canvas) {
+		// console.log(locationVector);
+		// }
 
-		if (canvas) {
-			// canvas.$$.ctx[0].camera.object = new THREE.PerspectiveCamera();
-			locationVector = canvas.$$.ctx[0].camera.object.position;
-		}
-
-		points = [
-			{
-				position: new THREE.Vector3(1.55, 0.3, -0.6),
-				element: ref
-			}
-		];
+		// points = [
+		// {
+		// position: new THREE.Vector3(1.55, 0.3, -0.6),
+		// element: ref
+		// }
+		// ];
 	});
 
+	console.log(locationVector);
 	let spin = 0;
 
 	SC.onFrame(() => {
-		console.log(locationVector);
 		// spin += 0.001;
-
-		for (const point of points) {
-			const screenPosition = point.position.clone();
-			// screenPosition.project(locationVector);
-		}
+		//The below code is for location point when applicable
+		// for (const point of points) {
+		// 	const screenPosition = point.position.clone();
+		// 	screenPosition.project(locationVector);
+		// }
 	});
 </script>
 

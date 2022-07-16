@@ -19,6 +19,16 @@
 			<h1>Contact</h1>
 			<button class="close-form-button" on:click={handleShowContact}>x</button>
 		</div>
+		<div class="form-content">
+			<p>Hey, if you like what you see and would like to work together, feel free to reach out.</p>
+			<ul>
+				<li>Email: chrisragland97@gmail.com</li>
+				<li>Instagram: @chris_ragland</li>
+				<li>LinkedIn: @chrisragland_</li>
+				<li>Twitter: @chrisragland_</li>
+				<li>Github: @raglandc</li>
+			</ul>
+		</div>
 	</div>
 {/if}
 
@@ -82,6 +92,12 @@
 
 	h1 {
 		color: var(--background-color);
+	}
+
+	.form-content {
+		margin: 0 auto;
+		width: 90%;
+		line-height: 1.5;
 	}
 
 	.close-form-button {
