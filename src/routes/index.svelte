@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { inview } from 'svelte-inview';
 	import type { ObserverEventDetails, Options } from 'svelte-inview';
-	import HomePageSectionOne from '../../sections/HomePageSectionOne.svelte';
-	import HomePageSectionTwo from '../../sections/HomePageSectionTwo.svelte';
+	import HomePageSectionOne from '../lib/sections/HomePageSectionOne.svelte';
+	import HomePageSectionTwo from '../lib/sections/HomePageSectionTwo.svelte';
 
 	let isInView: boolean;
 	const options: Options = {

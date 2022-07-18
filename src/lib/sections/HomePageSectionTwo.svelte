@@ -24,7 +24,7 @@
 
 	onMount(() => {
 		loader.load(
-			'../../static/phone.glb',
+			'../../../static/phone.glb',
 			(gltf) => {
 				phoneModel = gltf;
 			},
@@ -106,7 +106,7 @@
 	section {
 		position: relative;
 		grid-column: 2 / -2;
-		height: 100vh;
+		min-height: 100vh;
 	}
 
 	h1 {

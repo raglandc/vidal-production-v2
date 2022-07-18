@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { TroisProvider, getTrois } from 'svelte-trois';
 	import * as THREE from 'three';
 	import * as SC from 'svelte-cubed';
 	import { DRACOLoader } from 'three/examples/jsm/loaders/DracoLoader.js';
@@ -23,7 +22,7 @@
 	onMount(() => {
 		//Load the GLB file for the scene
 		loader.load(
-			'../../static/earth.glb',
+			'../../../static/earth.glb',
 			(gltf) => {
 				model = gltf;
 			},
@@ -42,10 +41,6 @@
 			}
 		];
 
-		if (model) {
-			const { camera } = getTrois();
-			console.log(camera);
-		}
 	});
 
 	let spin = 0;
@@ -70,7 +65,6 @@
 	<div bind:this={ref} class="location-point visible" />
 	<div class="three-scene">
 		<SC.Canvas bind:this={canvas} antialias alpha>
-			<TroisProvider bind:this={troisProvider}>
 				<SC.PerspectiveCamera position={[0, 0, 5]} />
 				<SC.PointLight position={[0, 7, 1]} />
 				<SC.AmbientLight />
@@ -90,7 +84,6 @@
 						enablePan={false}
 						enableRotate
 						/> -->
-			</TroisProvider>
 		</SC.Canvas>
 	</div>
 </section>
