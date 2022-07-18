@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { TroisProvider, getTrois } from 'svelte-trois';
 	import * as THREE from 'three';
 	import * as SC from 'svelte-cubed';
 	import { DRACOLoader } from 'three/examples/jsm/loaders/DracoLoader.js';
@@ -17,6 +18,7 @@
 	let canvas: SC.Canvas;
 	let points: any;
 	let locationVector: THREE.Vector3 | any; //chor: remove any once we find PV
+	let troisProvider: any;
 
 	onMount(() => {
 		//Load the GLB file for the scene
@@ -33,15 +35,17 @@
 			}
 		);
 
-		const camera = canvas;
-		console.log(camera);
-
 		points = [
 			{
 				position: new THREE.Vector3(1.55, 0.3, -0.6),
 				element: ref
 			}
 		];
+
+		if (model) {
+			const { camera } = getTrois();
+			console.log(camera);
+		}
 	});
 
 	let spin = 0;
@@ -66,25 +70,27 @@
 	<div bind:this={ref} class="location-point visible" />
 	<div class="three-scene">
 		<SC.Canvas bind:this={canvas} antialias alpha>
-			<SC.PerspectiveCamera position={[0, 0, 5]} />
-			<SC.PointLight position={[0, 7, 1]} />
-			<SC.AmbientLight />
-			{#if model}
-				<SC.Primitive
-					scale={1.2}
-					object={model.scene}
-					position={[0, -1, 0]}
-					rotation={[0, spin, -Math.PI * 0.15]}
-				/>
-			{/if}
-			<!-- <SC.OrbitControls
-					enableDamping
-					maxPolarAngle={Math.PI * 0.5}
-					minPolarAngle={Math.PI * 0.5}
-					enableZoom={false}
-					enablePan={false}
-					enableRotate
-					/> -->
+			<TroisProvider bind:this={troisProvider}>
+				<SC.PerspectiveCamera position={[0, 0, 5]} />
+				<SC.PointLight position={[0, 7, 1]} />
+				<SC.AmbientLight />
+				{#if model}
+					<SC.Primitive
+						scale={1.2}
+						object={model.scene}
+						position={[0, -1, 0]}
+						rotation={[0, spin, -Math.PI * 0.15]}
+					/>
+				{/if}
+				<!-- <SC.OrbitControls
+						enableDamping
+						maxPolarAngle={Math.PI * 0.5}
+						minPolarAngle={Math.PI * 0.5}
+						enableZoom={false}
+						enablePan={false}
+						enableRotate
+						/> -->
+			</TroisProvider>
 		</SC.Canvas>
 	</div>
 </section>
