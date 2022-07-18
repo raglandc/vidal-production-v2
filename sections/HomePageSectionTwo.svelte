@@ -12,6 +12,8 @@
 		rootMargin: '35px'
 	};
 
+	let currentHeight: number;
+	//Model imports
 	let phoneModel: any;
 	let monitorModel: any;
 	const dracoLoader = new DRACOLoader();
@@ -53,7 +55,14 @@
 	});
 </script>
 
-<section use:inview={options} on:change={(event) => console.log(event.detail.observer)}>
+<section
+	use:inview={options}
+	on:change={(event) => {
+		currentHeight = event.detail.entry.boundingClientRect.x;
+		let currentWindowHeight = window.scrollY;
+		console.log(currentHeight + currentWindowHeight);
+	}}
+>
 	<p class="three-d-span">3D</p>
 	<h1>Dream</h1>
 	<h1>Design</h1>

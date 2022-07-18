@@ -33,15 +33,8 @@
 			}
 		);
 
-		const mapIter = canvas.$$.context.values();
-		mapIter.next();
-		const ctx = mapIter.next().value;
-		locationVector = ctx.camera.position;
-
-		//i have found the camera through context but it says null
-		// if (canvas) {
-		// console.log(locationVector);
-		// }
+		const camera = canvas;
+		console.log(camera);
 
 		points = [
 			{
@@ -51,10 +44,6 @@
 		];
 	});
 
-	if (model) {
-		console.log(model);
-	}
-	console.log(locationVector);
 	let spin = 0;
 
 	SC.onFrame(() => {
