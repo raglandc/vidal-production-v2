@@ -6,6 +6,7 @@ export const GET = async () => {
 
 	const allPosts = await Promise.all(
 		iterablePostFiles.map(async ([path, resolver]) => {
+			//this is a type error
 			const { metadata } = await resolver();
 			const postPath = path.slice(2, -3);
 
