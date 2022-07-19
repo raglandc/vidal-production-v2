@@ -1,7 +1,7 @@
 <script context="module">
     import "prismjs";
     import "prismjs/themes/prism.css";
-    import "prism-themes/themes/prism-vsc-dark-plus.css";
+    import "prism-themes/themes/prism-dracula.css";
 </script>
 
 <script >
@@ -67,7 +67,7 @@
     }
 
 
-    @media only screen and (min-width: 700px){
+    @media only screen and (min-width: 1200px){
         article {
             grid-template-columns: 10% repeat(12, 1fr) 10%;
         }
@@ -76,6 +76,7 @@
         }
 
         header {
+            padding: 5%;
             grid-column: 2 / -2;
         }
     }
