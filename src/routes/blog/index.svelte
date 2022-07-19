@@ -9,7 +9,6 @@
                 posts: allPosts
             }
         }
-
     }
 </script>
 
@@ -22,10 +21,12 @@
 
     //this is for the list when user uses search bar. 
     //for each should be looping through this list
-    $: filterList = posts.filter((post: any) => post.meta.title.indexOf(searchTerm) !== -1);
+    $: filterList = posts.filter((post: any) =>{ 
+        const titleToLowercare = post.meta.title.toLowerCase();
+        const searchTermToLowerCase = searchTerm.toLowerCase();
 
-    console.log(filterList);
-
+        return titleToLowercare.includes(searchTermToLowerCase)
+    });
 
 </script>
 
