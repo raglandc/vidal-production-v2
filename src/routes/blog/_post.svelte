@@ -55,6 +55,7 @@
     .article-body{
         grid-column: 2 / -2;
         margin-bottom: 13%;
+        line-height: 1.5;
     }
 
     .meta-data {

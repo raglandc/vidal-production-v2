@@ -24,8 +24,16 @@
 
 
 <style>
+    /* 
+    The styles for this card were edited but the majority of the work belongs to  
+    John Meguerian
+    https://codepen.io/jmegs/pen/opbyXg?editors=1100
+
+    Thank you John, for your work.
+    */
     .card {
-        background: var(--text-secondary);
+        background: var(--text-primary);
+        border-radius: var(--border-radius);
         text-decoration: none;
         color: #444;
         display: flex;
@@ -40,12 +48,13 @@
     }
     
     h1 {
-        color: var(--text-primary);
+        color: var(--background-color);
         margin: 0;
         padding: 1rem;
     }
 
     .description {
+        margin: 0;
         padding: 1rem;
         flex: 1;
     }
@@ -72,15 +81,13 @@
         padding-bottom: 60%;
         background-size: cover;
         background-position: center center;
+        border-top-left-radius: var(--border-radius);
+        border-top-right-radius: var(--border-radius);
     }
 
-    @media only screen and (min-width: 120rem) {
-        .card:first-of-type {
-            grid-column: 1 / span 2;
-        }
-
+    @media only screen and (max-width: 1200px) {
         h1 {
-            font-size: 2.4px;
+            font-size: 2.4rem;
         }
 
     }

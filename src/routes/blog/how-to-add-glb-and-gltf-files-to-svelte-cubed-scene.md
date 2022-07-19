@@ -11,8 +11,6 @@ url: 'https://images.unsplash.com/photo-1655635949384-f737c5133dfe?ixlib=rb-1.2.
 	import BlogImage from "$lib/components/ui/BlogImage.svelte"
 </script>
 
-<!-- <img src="https://images.unsplash.com/photo-1657641898365-48ae7d64e676?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="This is an image of a toy 3d robot model" width="100%" > -->
-
 ## Prerequisites
 
 - A basic understanding of Svelte Cubed

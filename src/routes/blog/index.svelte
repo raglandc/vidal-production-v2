@@ -86,15 +86,29 @@
         border: none;
     }
 
-    @media only screen and (min-width: 30em) {
+    @media only screen and (min-width: 700px) {
         .list-of-blogs{
           grid-template-columns: 1fr 1fr;
         }
     }
   
-    @media only screen and (min-width: 60em) {
+    @media only screen and (min-width: 1000px) {
+        .list-of-blogs{
+         grid-template-columns: repeat(3, 1fr);
+        }
+
+       .list-of-blogs:first-child {
+            grid-column: 1 / span 2;
+        }
+    }
+
+    @media only screen and (min-width: 1800px) {
         .list-of-blogs{
          grid-template-columns: repeat(4, 1fr);
+        }
+
+       .list-of-blogs:first-child {
+            grid-column: 1 / span 2;
         }
     }
 </style>
