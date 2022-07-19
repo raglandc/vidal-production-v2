@@ -1,7 +1,7 @@
 <script context="module">
     import "prismjs";
     import "prismjs/themes/prism.css";
-    import "prism-themes/themes/prism-atom-dark.css";
+    import "prism-themes/themes/prism-vsc-dark-plus.css";
 </script>
 
 <script >
@@ -48,22 +48,20 @@
         background-color: var(--text-primary);
         color: #111;
         grid-column: 1 / -1;
-        padding: 10% 0 ;
         display: grid;
         grid-template-columns: 5% repeat(4, 1fr) 5%;
-        margin: 0 0 13%;
-        clip-path: polygon(0 7%, 100% 0, 100% 100%, 0 100%);
     }
 
     .article-body{
         grid-column: 2 / -2;
+        margin-bottom: 13%;
     }
 
     .meta-data {
-        width: 90%;
+        width: 100%;
         margin-bottom: 5%;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         color: var(--text-secondary);
     }
@@ -74,7 +72,11 @@
             grid-template-columns: 10% repeat(12, 1fr) 10%;
         }
         .article-body {
-            grid-column: 3 / -3;
+            grid-column: 4 / -4;
+        }
+
+        header {
+            grid-column: 2 / -2;
         }
     }
 </style>
