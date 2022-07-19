@@ -36,10 +36,10 @@
 </div>
 <section>
     <input bind:value={searchTerm} placeholder="Search Blogs" >
-    <div>
+    <div class="list-of-blogs">
         {#if filterList}
             {#each filterList as post} 
-                <BlogPostCard readTime={post.meta.readTime} description={post.meta.description} path={post.path} title={post.meta.title} date={post.meta.date}/>
+                <BlogPostCard url={post.meta.url} readTime={post.meta.readTime} description={post.meta.description} path={post.path} title={post.meta.title} date={post.meta.date}/>
             {/each}
         {/if}
 
@@ -55,6 +55,14 @@
     section {
         min-height: 100vh;
         grid-column: 2 / -2;
+    }
+
+    .list-of-blogs {
+        margin: 4% auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-gap: 20px;
     }
 
     .header{
@@ -73,8 +81,20 @@
 
     input {
         width: 100%;
-        padding: .618rem;
+        padding: 1rem;
         border-radius: var(--border-radius);
         border: none;
+    }
+
+    @media only screen and (min-width: 30em) {
+        .list-of-blogs{
+          grid-template-columns: 1fr 1fr;
+        }
+    }
+  
+    @media only screen and (min-width: 60em) {
+        .list-of-blogs{
+         grid-template-columns: repeat(4, 1fr);
+        }
     }
 </style>
