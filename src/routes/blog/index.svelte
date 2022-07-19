@@ -38,7 +38,7 @@
     <div>
         {#if filterList}
             {#each filterList as post} 
-                <BlogPostCard description={post.meta.description} path={post.path} title={post.meta.title} date={post.meta.date}/>
+                <BlogPostCard readTime={post.meta.readTime} description={post.meta.description} path={post.path} title={post.meta.title} date={post.meta.date}/>
             {/each}
         {/if}
 

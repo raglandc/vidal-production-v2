@@ -3,6 +3,7 @@
     export let date: string;
     export let description: string;
     export let path: string;
+    export let readTime: number;
 </script>
 
 
@@ -14,7 +15,7 @@
         <p>{description}</p>
         <div class="meta-data">
             <span>{date}</span>
-            <span>read time</span>
+            <span>{readTime} minute read</span>
         </div>
     </div>
 </a>
