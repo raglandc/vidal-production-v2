@@ -1,7 +1,7 @@
 <script context="module">
     import "prismjs";
     import "prismjs/themes/prism.css";
-    import "prism-themes/themes/prism-vsc-dark-plus.css";
+    import "prism-themes/themes/prism-atom-dark.css";
 </script>
 
 <script >
@@ -39,24 +39,20 @@
         color: var(--text-primary)
     }
 
-article {
-    color: #111;
-    background: var(--text-primary);
-    grid-column: 1 / -1;
-    padding: 5% 5% 0 ;
-    clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
+    article {
+        color: #111;
+        background: var(--text-primary);
+        grid-column: 1 / -1;
+        padding: 5% 5% 0 ;
+        clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
+    }
 
-}
-
-
-.meta-data {
-    width: 90%;
-    margin-bottom: 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--text-secondary);
-}
-
-
+    .meta-data {
+        width: 90%;
+        margin-bottom: 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--text-secondary);
+    }
 </style>
