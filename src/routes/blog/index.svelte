@@ -29,8 +29,11 @@
 
 </script>
 
+<div class="header">
+    <h1>Blogs</h1>
+    <p>Technical related articles</p>
+</div>
 <section>
-    <h1>Blogs page</h1>
     <input bind:value={searchTerm} placeholder="Search Blogs" >
     <div>
         {#if filterList}
@@ -51,6 +54,20 @@
     section {
         min-height: 100vh;
         grid-column: 2 / -2;
+    }
+
+    .header{
+        color: var(--text-primary);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 15vh;
+        grid-column: 1 / -1;
+
+    }
+    h1 {
+        margin: 0;
     }
 
     input {

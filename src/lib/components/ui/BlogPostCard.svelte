@@ -22,15 +22,19 @@
 
 <style>
     .card {
-        background-color: var(--text-primary);
+        background-color: var(--text-secondary);
         width: 100%;
         margin: 1rem auto;
         border-radius: var(--border-radius);
         padding: 1rem;
     }
+    .card:hover {
+        transform: scale(1.01);
+    }
     
     h3 {
-        color: var(--background-color);
+        color: var(--text-primary);
+        font-size: larger;
         margin: 0;
     }
 
@@ -44,6 +48,6 @@
 
 
     span {
-        color: var(--text-secondary);
+        color: var(--background-color);
     }
 </style>
