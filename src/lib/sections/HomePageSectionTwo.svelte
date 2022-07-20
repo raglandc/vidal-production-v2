@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import * as THREE from 'three';
 	import * as SC from 'svelte-cubed';
 	import { DRACOLoader } from 'three/examples/jsm/loaders/DracoLoader.js';
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+	import viewport from "$lib/utils/useViewportAction"
 
 	//Model imports
 	let phoneModel: any;
@@ -54,20 +54,26 @@
 					);
 				});
 
+
+
+	//animation
 	let spin = 0;
+	let headerAnimation = false;
+	let textAnimation = false;
+
 	SC.onFrame(() => {
 		spin += 0.005;
 	});
 </script>
 
 <section>
-<p class="three-d-span">3D</p>
-<h1>Dream</h1>
-<h1>Design</h1>
-<h1>Develop</h1>
-	<p>We build fast, modern and creative websites</p>
-	<p>Websites that work on any device size</p>
-	<p>Laptops, phones, desktops</p>
+<p use:viewport on:enterViewport={() => textAnimation = true} class={textAnimation ? "text-animation three-d-span": "three-d-span"}>3D</p>
+<h1 class={headerAnimation ? "header-animation" : ""} use:viewport on:enterViewport={() => headerAnimation = true}>Dream</h1>
+<h1 class={headerAnimation ? "header-animation" : ""}>Design</h1>
+<h1 class={headerAnimation ? "header-animation" : ""}>Develop</h1>
+	<p class={textAnimation ? "text-animation": ""}>We build fast, modern and creative websites</p>
+	<p class={textAnimation ? "text-animation": ""}>Websites that work on any device size</p>
+	<p class={textAnimation ? "text-animation": ""}>Laptops, phones, desktops</p>
 	<div class="three-d">
 		<SC.Canvas antialias alpha>
 			<SC.PerspectiveCamera position={[0, 0, 4]}/>
@@ -124,13 +130,29 @@
 		margin: 0.5rem;
 		font-size: 5rem;
 		color: var(--text-primary);
+		transform: translateY(-200%);
+		opacity: 0;
+		transition: all 1s ease-in-out;
 	}
+
+	.header-animation {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+
 	p {
 		font-size: 2rem;
 		color: var(--text-secondary);
+		opacity: 0;
+		transition: all 1s ease-in-out;
 	}
 
 	.three-d-span {
 		font-size: medium;
+	}
+
+	.text-animation {
+		opacity: 1;
 	}
 </style>
