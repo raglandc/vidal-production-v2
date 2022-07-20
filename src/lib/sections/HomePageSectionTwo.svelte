@@ -82,6 +82,7 @@
 	<h1>Develop</h1>
 	<p>We build fast, modern and creative websites</p>
 	<p>Websites that work on any device size</p>
+	<p>Laptops, phones, desktops, even a TV if you would like</p>
 	<div class="three-d">
 		<SC.Canvas antialias alpha>
 			<SC.PerspectiveCamera position={[0, 0, 4]} />
@@ -128,7 +129,9 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		grid-column: 2 / -2;
+		text-align: center;
+		padding: 0 5%;
+		grid-column: 1 / -1;
 		min-height: 100vh;
 	}
 
