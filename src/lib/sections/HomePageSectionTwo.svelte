@@ -5,14 +5,7 @@
 	import { DRACOLoader } from 'three/examples/jsm/loaders/DracoLoader.js';
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 	import { inview } from 'svelte-inview';
-	import type { ObserverEventDetails, Options } from 'svelte-inview';
 
-	let isInView: boolean;
-	const options: Options = {
-		rootMargin: '35px'
-	};
-
-	let currentHeight: number;
 	//Model imports
 	let phoneModel: any;
 	let monitorModel: any;
@@ -35,32 +28,32 @@
 			(error) => {
 				console.log('ERROR: ', error);
 			}
-		);
-		loader.load(
-			'../../static/monitor.glb',
-			(gltf) => {
-				monitorModel = gltf;
-			},
-			() => {
-				console.log('Monitor model in progress...');
-			},
-			(error) => {
-				console.log('ERROR: ', error);
-			}
-		);
-		loader.load(
-			'../../static/laptop.glb',
-			(gltf) => {
-				laptopModel = gltf;
-			},
-			() => {
-				console.log('Laptop model in progress...');
-			},
-			(error) => {
-				console.log('ERROR: ', error);
-			}
-		);
-	});
+			);
+			loader.load(
+				'../../static/monitor.glb',
+				(gltf) => {
+					monitorModel = gltf;
+				},
+				() => {
+					console.log('Monitor model in progress...');
+				},
+				(error) => {
+					console.log('ERROR: ', error);
+				}
+				);
+				loader.load(
+					'../../static/laptop.glb',
+					(gltf) => {
+						laptopModel = gltf;
+					},
+					() => {
+						console.log('Laptop model in progress...');
+					},
+					(error) => {
+						console.log('ERROR: ', error);
+					}
+					);
+				});
 
 	let spin = 0;
 	SC.onFrame(() => {
@@ -68,26 +61,19 @@
 	});
 </script>
 
-<section
-	use:inview={options}
-	on:change={(event) => {
-		currentHeight = event.detail.entry.boundingClientRect.x;
-		let currentWindowHeight = window.scrollY;
-		console.log(currentHeight + currentWindowHeight);
-	}}
->
-	<p class="three-d-span">3D</p>
-	<h1>Dream</h1>
-	<h1>Design</h1>
-	<h1>Develop</h1>
+<section>
+<p class="three-d-span">3D</p>
+<h1>Dream</h1>
+<h1>Design</h1>
+<h1>Develop</h1>
 	<p>We build fast, modern and creative websites</p>
 	<p>Websites that work on any device size</p>
-	<p>Laptops, phones, desktops, even a TV if you would like</p>
+	<p>Laptops, phones, desktops</p>
 	<div class="three-d">
 		<SC.Canvas antialias alpha>
-			<SC.PerspectiveCamera position={[0, 0, 4]} />
-			<SC.PointLight position={[0, 7, 1]} />
-			<SC.AmbientLight />
+			<SC.PerspectiveCamera position={[0, 0, 4]}/>
+			<SC.PointLight position={[0, 7, 1]} color="#f5f3ff"/>
+			<SC.AmbientLight color="#f5f3ff"/>
 			{#if phoneModel && monitorModel && laptopModel}
 				<SC.Primitive
 					scale={1}
