@@ -3,6 +3,7 @@
 	import type { ObserverEventDetails, Options } from 'svelte-inview';
 	import HomePageSectionOne from '../lib/sections/HomePageSectionOne.svelte';
 	import HomePageSectionTwo from '../lib/sections/HomePageSectionTwo.svelte';
+	import HomePageSectionThree from '../lib/sections/HomePageSectionThree.svelte';
 
 	let isInView: boolean;
 	const options: Options = {
@@ -12,14 +13,7 @@
 
 <HomePageSectionOne />
 <HomePageSectionTwo />
-
-<section>
-	<h1>About</h1>
-	<p>
-		Vidal was founded with the intention of creating eye-catching websites that make the visitor
-		say, "woah"
-	</p>
-</section>
+<HomePageSectionThree/>
 
 <style>
 	section {
