@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import viewport from '$lib/utils/useViewportAction';
 	import * as THREE from 'three';
 	import * as SC from 'svelte-cubed';
 	import { DRACOLoader } from 'three/examples/jsm/loaders/DracoLoader.js';
@@ -17,7 +18,6 @@
 	let canvas: SC.Canvas;
 	let points: any;
 	let locationVector: THREE.Vector3 | any; //chor: remove any once we find PV
-	let troisProvider: any;
 
 	onMount(() => {
 		//Load the GLB file for the scene
@@ -44,6 +44,7 @@
 	});
 
 	let spin = 0;
+	let animate = false;
 
 	SC.onFrame(() => {
 		spin += 0.001;
@@ -55,12 +56,12 @@
 	});
 </script>
 
-<section class="section-one">
+<section use:viewport on:enterViewport = {() => animate = true}>
 	<div class="text-container">
-		<h1>Vidal</h1>
-		<p>A strong online presence is important</p>
-		<p>These days it's vital</p>
-		<p>Meet Vidal</p>
+		<h1 class={animate ? "header-animation" : ""}>Vidal</h1>
+		<p class={animate ? "text-animation" : ""}>A strong online presence is important</p>
+		<p class={animate ? "text-animation" : ""}>These days it's vital</p>
+		<p class={animate ? "text-animation" : ""}>Meet Vidal</p>
 	</div>
 	<div bind:this={ref} class="location-point visible" />
 	<div class="three-scene">
@@ -171,10 +172,24 @@
 		font-size: 7rem;
 		margin: 0.5rem;
 		color: var(--text-primary);
+		transform: translateY(-300%);
+		opacity: 0;
+		transition: all 1s ease-in-out;
+	}
+
+	.header-animation {
+		opacity: 1;
+		transform: translateY(0%);
 	}
 
 	p {
 		font-size: 2rem;
 		color: var(--text-secondary);
+		opacity: 0;
+		transition: all 1s ease-in-out;
+	}
+
+	.text-animation {
+		opacity: 1;
 	}
 </style>
