@@ -172,9 +172,9 @@
 		font-size: 7rem;
 		margin: 0.5rem;
 		color: var(--text-primary);
-		transform: translateY(-300%);
+		transform: translateY(-100%);
 		opacity: 0;
-		transition: all 1s ease-in-out;
+		transition: all 1s ease-out;
 	}
 
 	.header-animation {
@@ -186,7 +186,7 @@
 		font-size: 2rem;
 		color: var(--text-secondary);
 		opacity: 0;
-		transition: all 1s ease-in-out;
+		transition: all 2s ease-out;
 	}
 
 	.text-animation {

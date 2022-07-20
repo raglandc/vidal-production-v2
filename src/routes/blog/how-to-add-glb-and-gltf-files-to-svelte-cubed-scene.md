@@ -122,7 +122,7 @@ So now our code becomes,
 </SC.Canvas>
 ```
 
-<BlogWarning warning="Notice that I am using a compressed file, a .glb. If you are using a standard .gltf file you do not need the DRACOLoader()."/>
+<BlogWarning warning="Note that I am using a compressed file, a .glb. If you are using a standard .gltf file you do not need the DRACOLoader()."/>
 
 Now to load the model from the file.
 
@@ -174,9 +174,9 @@ Next is the important part.
 
 We are going to load our model when the component has mounted. Luckily for us, Svelte has a built-in function called onMount(), just for this scenario.
 
-If you are coming from a React background, this is similar to the lifecycle function "componentDidMount."
+If you are coming from a React background, this is similar to the lifecycle function 'componentDidMount'.
 
-So import "onMount" from Svelte at the top of your script tag.
+So import 'onMount' from Svelte at the top of your script tag.
 
 ```svelte
 <script>import {onMount} from "svelte"; /** other code below **/</script>
@@ -219,7 +219,7 @@ Your code should resemble the following
 	});
 </script>
 
-<SC.Canvas bind:this={canvas} antialias alpha>
+<SC.Canvas antialias alpha>
 		<SC.PerspectiveCamera position={[0, 0, 5]} />
 		<SC.PointLight />
 		<SC.AmbientLight />
@@ -228,10 +228,10 @@ Your code should resemble the following
 
 ## We are almost done!!
 
-We have to place our model inside a SC component called SC.Primitive. This component has a prop called object that we will pass our model and access the scene.
+We have to place our model inside a SC component called SC.Primitive. This component has a prop named object that we will pass 'model.scene'.
 
 ```svelte
-<SC.Canvas bind:this={canvas} antialias alpha>
+<SC.Canvas antialias alpha>
 	<SC.PerspectiveCamera position={[0, 0, 5]} />
 	<SC.PointLight />
 	<SC.AmbientLight />
@@ -249,7 +249,7 @@ We need to check to see if there **IS** a model before we use it. No worries, th
 We can use Svelte's built in "If" syntax.
 
 ```svelte
-<SC.Canvas bind:this={canvas} antialias alpha>
+<SC.Canvass antialias alpha>
 	<SC.PerspectiveCamera position={[0, 0, 5]} />
 	<SC.PointLight />
 	<SC.AmbientLight />

@@ -58,22 +58,21 @@
 
 	//animation
 	let spin = 0;
-	let headerAnimation = false;
-	let textAnimation = false;
+	let animation = false;
 
 	SC.onFrame(() => {
-		spin += 0.005;
+		spin += 0.002;
 	});
 </script>
 
 <section>
-<p use:viewport on:enterViewport={() => textAnimation = true} class={textAnimation ? "text-animation three-d-span": "three-d-span"}>3D</p>
-<h1 class={headerAnimation ? "header-animation" : ""} use:viewport on:enterViewport={() => headerAnimation = true}>Dream</h1>
-<h1 class={headerAnimation ? "header-animation" : ""}>Design</h1>
-<h1 class={headerAnimation ? "header-animation" : ""}>Develop</h1>
-	<p class={textAnimation ? "text-animation": ""}>We build fast, modern and creative websites</p>
-	<p class={textAnimation ? "text-animation": ""}>Websites that work on any device size</p>
-	<p class={textAnimation ? "text-animation": ""}>Laptops, phones, desktops</p>
+<p class={animation ? "text-animation three-d-span": "three-d-span"}>3D</p>
+<h1 class={animation ? "header-animation" : ""}>Dream</h1>
+<h1 use:viewport  on:enterViewport={() => animation = true}  class={animation ? "header-animation" : ""}>Design</h1>
+<h1 class={animation ? "header-animation" : ""}>Develop</h1>
+	<p class={animation ? "text-animation": ""}>We build fast, modern and creative websites</p>
+	<p class={animation ? "text-animation": ""}>Websites that work on any device size</p>
+	<p class={animation ? "text-animation": ""}>Laptops, phones, desktops</p>
 	<div class="three-d">
 		<SC.Canvas antialias alpha>
 			<SC.PerspectiveCamera position={[0, 0, 4]}/>
@@ -83,20 +82,20 @@
 				<SC.Primitive
 					scale={1}
 					object={phoneModel.scene}
-					rotation={[0, spin, Math.PI * 0.1]}
-					position={[Math.sin(spin) * .5, Math.sin(spin), Math.cos(spin) * .5]}
+					rotation={[0, spin * 5, Math.PI * 0.1]}
+					position={[0,1.2,0]}
 				/>
 				<SC.Primitive
 					scale={0.4}
 					object={monitorModel.scene}
-					rotation={[0, Math.sin(Math.PI * .25 * spin), Math.sin(Math.PI * .25 * spin)]}
-					position={[Math.cos(spin) * .5, -Math.sin(spin), -Math.cos(spin) * .5]}
+					rotation={[0, -Math.sin(Math.PI * spin * .25), 0]}
+					position={[0,0,0]}
 				/>
 				<SC.Primitive
 					scale={0.5}
 					object={laptopModel.scene}
 					rotation={[0, Math.sin(Math.PI * spin * .25), 0]}
-					position={[Math.cos(spin) * .5, -Math.cos(spin), Math.sin(spin) * .5]}
+					position={[0,-1.20,0]}
 				/>
 			{/if}
 		</SC.Canvas>
@@ -121,6 +120,7 @@
 		justify-content: center;
 		align-items: center;
 		text-align: center;
+		margin: 10% auto;
 		padding: 0 5%;
 		grid-column: 1 / -1;
 		min-height: 100vh;
@@ -130,7 +130,7 @@
 		margin: 0.5rem;
 		font-size: 5rem;
 		color: var(--text-primary);
-		transform: translateY(-200%);
+		transform: translateY(200%);
 		opacity: 0;
 		transition: all 1s ease-in-out;
 	}

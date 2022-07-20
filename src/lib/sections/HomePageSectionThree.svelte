@@ -21,6 +21,7 @@ let animate = false;
 <style>
     section {
 		grid-column: 2 / -2;
+        margin: 10% auto;
 		height: 100vh;
 	}
 
