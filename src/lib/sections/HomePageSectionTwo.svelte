@@ -4,7 +4,6 @@
 	import * as SC from 'svelte-cubed';
 	import { DRACOLoader } from 'three/examples/jsm/loaders/DracoLoader.js';
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-	import { inview } from 'svelte-inview';
 
 	//Model imports
 	let phoneModel: any;
