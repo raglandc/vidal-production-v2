@@ -1,12 +1,14 @@
 <script lang="ts">
 export let url: string;
+export let description: string;
+export let name: string;
 </script>
 
 
 
 <div class="card">
     <div class="employee-picture" style="background-image: url({url});"/>
-    <p class="description">Chris is the president of Vidal Developers</p>
+    <p class="description">{description}</p>
 </div>  
 <style>
     .card {
@@ -26,6 +28,7 @@ export let url: string;
     .description {
         text-align: center;
         color: var(--text-secondary);
-        padding: 1rem;
+        width: 60%;
+        line-height: 2;
     }
 </style>

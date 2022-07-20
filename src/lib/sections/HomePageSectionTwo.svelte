@@ -143,6 +143,7 @@
 
 	p {
 		font-size: 2rem;
+		margin: 1.5rem 0;
 		color: var(--text-secondary);
 		opacity: 0;
 		transition: all 1s ease-in-out;
