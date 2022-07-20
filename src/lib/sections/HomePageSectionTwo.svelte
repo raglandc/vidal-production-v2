@@ -16,6 +16,7 @@
 	//Model imports
 	let phoneModel: any;
 	let monitorModel: any;
+	let laptopModel: any;
 	const dracoLoader = new DRACOLoader();
 	const loader = new GLTFLoader();
 	dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
@@ -47,6 +48,18 @@
 				console.log('ERROR: ', error);
 			}
 		);
+		loader.load(
+			'../../static/laptop.glb',
+			(gltf) => {
+				laptopModel = gltf;
+			},
+			() => {
+				console.log('Laptop model in progress...');
+			},
+			(error) => {
+				console.log('ERROR: ', error);
+			}
+		);
 	});
 
 	let spin = 0;
@@ -72,20 +85,26 @@
 	<div class="three-d">
 		<SC.Canvas antialias alpha>
 			<SC.PerspectiveCamera position={[0, 0, 4]} />
-			<SC.PointLight position={[1, 4, 4]} />
+			<SC.PointLight position={[0, 7, 1]} />
 			<SC.AmbientLight />
-			{#if phoneModel && monitorModel}
+			{#if phoneModel && monitorModel && laptopModel}
 				<SC.Primitive
-					scale={1.5}
+					scale={1}
 					object={phoneModel.scene}
 					rotation={[0, spin, Math.PI * 0.1]}
-					position={[0, 0, 0]}
+					position={[Math.sin(spin) * .5, Math.sin(spin), Math.cos(spin) * .5]}
+				/>
+				<SC.Primitive
+					scale={0.4}
+					object={monitorModel.scene}
+					rotation={[0, Math.sin(Math.PI * .25 * spin), Math.sin(Math.PI * .25 * spin)]}
+					position={[Math.cos(spin) * .5, -Math.sin(spin), -Math.cos(spin) * .5]}
 				/>
 				<SC.Primitive
 					scale={0.5}
-					object={monitorModel.scene}
-					rotation={[0, 0, 0]}
-					position={[0, -1, 0]}
+					object={laptopModel.scene}
+					rotation={[0, Math.sin(Math.PI * spin * .25), 0]}
+					position={[Math.cos(spin) * .5, -Math.cos(spin), Math.sin(spin) * .5]}
 				/>
 			{/if}
 		</SC.Canvas>
@@ -105,6 +124,10 @@
 
 	section {
 		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		grid-column: 2 / -2;
 		min-height: 100vh;
 	}
