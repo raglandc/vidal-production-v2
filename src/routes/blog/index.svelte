@@ -35,7 +35,7 @@
     <p>Technical related articles</p>
 </div>
 <section>
-    <input bind:value={searchTerm} placeholder="Search Blogs" >
+    <input bind:value={searchTerm} placeholder="Search Blogs With Keywords" >
     <div class="list-of-blogs">
         {#if filterList}
             {#each filterList as post} 
