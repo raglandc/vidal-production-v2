@@ -19,6 +19,7 @@
 		--button: #ddd6fe;
 		--button-hover: #c4b5fd;
 		--border-radius: 8px;
+		--letter-spacing: 8px;
 	}
 	:global(html) {
 		position: relative;

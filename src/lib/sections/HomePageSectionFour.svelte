@@ -3,10 +3,10 @@
     import EmployeeCard from "$lib/components/ui/EmployeeCard.svelte";
 </script>
 
-<h1>Meet the team</h1>
+<h1>MEET THE TEAM</h1>
 <section>
     <span class="card-one">
-        <EmployeeCard role="President" name="Chris" description="Chris founded Vidal with the intention of building beautiful websites that demonstrate the beauty behind simplicity" url="../../static/presidentVidal.jpg" />
+        <EmployeeCard role="PRESIDENT" name="Chris" description="Chris founded Vidal with the intention of building beautiful websites that demonstrate the beauty behind simplicity" url="../../static/presidentVidal.jpg" />
     </span>
 </section>
 
@@ -20,6 +20,7 @@
     }
 
     h1 {
+        letter-spacing: var(--letter-spacing);
         font-size: 4rem;
         margin: 10% 0;
         color: var(--text-primary);

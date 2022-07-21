@@ -58,7 +58,7 @@
 
 <section use:viewport on:enterViewport = {() => animate = true}>
 	<div class="text-container">
-		<h1 class={animate ? "header-animation" : ""}>Vidal</h1>
+		<h1 class={animate ? "header-animation" : ""}>VIDAL</h1>
 		<p class={animate ? "text-animation" : ""}>A strong online presence is important</p>
 		<p class={animate ? "text-animation" : ""}>These days it's vital</p>
 		<p class={animate ? "text-animation" : ""}>Meet Vidal</p>
@@ -169,6 +169,7 @@
 	}
 
 	h1 {
+		letter-spacing: var(--letter-spacing);
 		font-size: 7rem;
 		margin: 0.5rem;
 		color: var(--text-primary);

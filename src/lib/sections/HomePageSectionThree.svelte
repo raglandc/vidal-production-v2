@@ -11,7 +11,7 @@ let animate = false;
     on:enterViewport = {() => {
         animate = true;
         }}
->About</h1>
+>ABOUT</h1>
         <p class={animate ? "text-animate" : ""}>
             Vidal was founded with the intention of creating eye-catching websites that make the visitor
             say, "woah"
@@ -26,6 +26,7 @@ let animate = false;
 	}
 
 	h1 {
+        letter-spacing: var(--letter-spacing);
 		margin: 0.5rem;
 		font-size: 5rem;
 		color: var(--text-primary);

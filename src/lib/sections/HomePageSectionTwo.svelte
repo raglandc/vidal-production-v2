@@ -67,9 +67,9 @@
 
 <section>
 <p class={animation ? "text-animation three-d-span": "three-d-span"}>3D</p>
-<h1 class={animation ? "header-animation" : ""}>Dream</h1>
-<h1 use:viewport  on:enterViewport={() => animation = true}  class={animation ? "header-animation" : ""}>Design</h1>
-<h1 class={animation ? "header-animation" : ""}>Develop</h1>
+<h1 class={animation ? "header-animation" : ""}>DREAM</h1>
+<h1 use:viewport  on:enterViewport={() => animation = true}  class={animation ? "header-animation" : ""}>DESIGN</h1>
+<h1 class={animation ? "header-animation" : ""}>DEVELOP</h1>
 	<p class={animation ? "text-animation": ""}>We build fast, modern and creative websites</p>
 	<p class={animation ? "text-animation": ""}>Websites that work on any device size</p>
 	<p class={animation ? "text-animation": ""}>Laptops, phones, desktops</p>
@@ -127,15 +127,16 @@
 	}
 
 	h1 {
+		letter-spacing: 15px;
 		margin: 0.5rem;
 		font-size: 5rem;
 		color: var(--text-primary);
-		transform: translateY(200%);
 		opacity: 0;
 		transition: all 1s ease-in-out;
 	}
 
 	.header-animation {
+		letter-spacing: var(--letter-spacing);
 		opacity: 1;
 		transform: translateY(0);
 	}
