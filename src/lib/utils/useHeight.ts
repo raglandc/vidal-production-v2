@@ -1,13 +1,13 @@
 let intersectionObserver: IntersectionObserver;
-let elementIntersectionRatio: number;
+let intersectionObserverEntry: IntersectionObserverEntry;
 let ratio: number;
 
 function ensureObserver() {
+	if (intersectionObserver) return;
+
 	intersectionObserver = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				elementIntersectionRatio = entry.intersectionRatio;
-			}
+			intersectionObserverEntry = entry;
 		});
 	});
 }
@@ -17,7 +17,17 @@ export default function useHeight(element: HTMLElement) {
 
 	intersectionObserver.observe(element);
 
-	ratio = elementIntersectionRatio * 100;
+	// window.addEventListener('scroll', () => {
+	// 	console.log(ratio * 100);
+	// });
 
-	return ratio;
+	return {
+		update() {
+			console.log(intersectionObserverEntry);
+		},
+
+		destroy() {
+			intersectionObserver.unobserve(element);
+		}
+	};
 }
