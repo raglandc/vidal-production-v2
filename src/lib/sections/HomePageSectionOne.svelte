@@ -63,7 +63,8 @@
 		<p class={animate ? "text-animation" : ""}>These days it's vital</p>
 		<p class={animate ? "text-animation" : ""}>Meet Vidal</p>
 	</div>
-	<div bind:this={ref} class="location-point visible" />
+	<!-- Once I can access the root we can use the camera -->
+	<!-- <div bind:this={ref} class="location-point visible" /> -->
 	<div class="three-scene">
 		<SC.Canvas bind:this={canvas} antialias alpha>
 				<SC.PerspectiveCamera position={[0, 0, 5]} />
@@ -77,14 +78,14 @@
 						rotation={[0, spin, -Math.PI * 0.15]}
 					/>
 				{/if}
-				<!-- <SC.OrbitControls
+				<SC.OrbitControls
 						enableDamping
 						maxPolarAngle={Math.PI * 0.5}
 						minPolarAngle={Math.PI * 0.5}
 						enableZoom={false}
 						enablePan={false}
 						enableRotate
-						/> -->
+						/>
 		</SC.Canvas>
 	</div>
 </section>

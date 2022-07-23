@@ -1,24 +1,16 @@
 <script lang="ts">
-
 import viewport from "$lib/utils/useViewportAction";
-import useHeight from "$lib/utils/useHeight";
-import { onMount } from "svelte";
 
 let animate = false;
-
-let section: HTMLElement;
-let elRatio = 0;
-
 </script>
 
-<section bind:this={section} use:useHeight={section}>
-
+<section>
     <h1 class={animate ? "heading-animate" : ""} use:viewport
     on:enterViewport = {() => {
         animate = true;
         }}
 >ABOUT</h1>
-        <p style="transform: translateX({elRatio}%);" class={animate ? "text-animate" : ""}>
+        <p class={animate ? "text-animate" : ""}>
             Vidal was founded with the intention of creating eye-catching websites that make the visitor
             say, "woah"
         </p>
