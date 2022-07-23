@@ -1,6 +1,8 @@
 
 <script>
     import EmployeeCard from "$lib/components/ui/EmployeeCard.svelte";
+
+    
 </script>
 
 <h1>MEET THE TEAM</h1>

@@ -1,7 +1,7 @@
 //This is the API for our blog posts
 
 export const GET = async () => {
-	const allPostFiles = import.meta.glob('../blog/*.md');
+	const allPostFiles = import.meta.glob('../blog/blogs/*.md');
 	const iterablePostFiles = Object.entries(allPostFiles);
 
 	const allPosts = await Promise.all(
