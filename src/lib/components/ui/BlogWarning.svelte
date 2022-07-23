@@ -4,7 +4,8 @@
 </script>
 
 <div class="warning-container">
-    <p>{warning}</p>
+    <p class="expoint">!</p>
+    <p class="warning-text">{warning}</p>
 </div>
 
 <style>
@@ -12,9 +13,21 @@
         background-color:#fef08a75;
         color: #111;
         border-radius: var(--border-radius);
+        display: flex;
+        align-items: center;
     }
-    p{
-        width: 100%;
+
+    p {
+        padding: 0;
+        margin: 0;
+    }
+
+    .expoint {
+        margin: 1.5rem;
+        font-size: 3rem;
+    }
+
+    .warning-text{
         padding: 1.5rem 1rem;
         text-align: center;
     }

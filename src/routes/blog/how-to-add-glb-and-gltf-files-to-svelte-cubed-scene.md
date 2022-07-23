@@ -153,7 +153,7 @@ Inside the script tag perform the following task,
 </SC.Canvas>
 ```
 
-The next step is to instantiate a variable that will hold our model.
+Next we will instantiate a variable that will hold our model.
 
 ```svelte
 <script>
@@ -176,10 +176,10 @@ We are going to load our model when the component has mounted. Luckily for us, S
 
 If you are coming from a React background, this is similar to the lifecycle function 'componentDidMount'.
 
-So import 'onMount' from Svelte at the top of your script tag.
+Import 'onMount' from Svelte at the top of your script tag.
 
 ```svelte
-<script>import {onMount} from "svelte"; /** other code below **/</script>
+<script>import {onMount} from "svelte"; /** other code below **/ </script>
 ```
 
 Now we can load the model, as the component mounts.
@@ -312,4 +312,4 @@ If you still can not see your model, try to scale and or re-position your model.
 
 ## Conclusion
 
-These are the steps I took to use .glb files in this website. Svelte Cubed is still very much in its infancy at the time of writing this article. This process may become simpler in the future. However, compared to what it would have taken in a standard three.js project this is really nice as a developer.
+These are the steps I took to use .glb files in this website. Svelte Cubed is still very much in the projects infancy at the time of writing this article. This process may be simplified in the future. However, compared to what it would have taken in a standard three.js project this is really nice as a developer.
