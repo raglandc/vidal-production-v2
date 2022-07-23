@@ -59,7 +59,7 @@
         grid-column: -1 / 1;
         text-align: center;
         opacity: 0;
-        transform: translateX(25%);
+        transform: translateY(25%);
         transition: all 1s ease-out;
     }
 

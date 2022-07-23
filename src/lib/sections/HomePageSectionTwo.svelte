@@ -21,38 +21,20 @@
 			(gltf) => {
 				phoneModel = gltf;
 			},
-			() => {
-				console.log('Phone model in progress...');
+		);
+		loader.load(
+			'../../static/monitor.glb',
+			(gltf) => {
+				monitorModel = gltf;
 			},
-			(error) => {
-				console.log('ERROR: ', error);
-			}
+		);
+		loader.load(
+			'../../static/laptop.glb',
+			(gltf) => {
+				laptopModel = gltf;
+			},
 			);
-			loader.load(
-				'../../static/monitor.glb',
-				(gltf) => {
-					monitorModel = gltf;
-				},
-				() => {
-					console.log('Monitor model in progress...');
-				},
-				(error) => {
-					console.log('ERROR: ', error);
-				}
-				);
-				loader.load(
-					'../../static/laptop.glb',
-					(gltf) => {
-						laptopModel = gltf;
-					},
-					() => {
-						console.log('Laptop model in progress...');
-					},
-					(error) => {
-						console.log('ERROR: ', error);
-					}
-					);
-				});
+	});
 
 
 
@@ -70,9 +52,10 @@
 <h1 class={animation ? "header-animation" : ""}>DREAM</h1>
 <h1 use:viewport  on:enterViewport={() => animation = true}  class={animation ? "header-animation" : ""}>DESIGN</h1>
 <h1 class={animation ? "header-animation" : ""}>DEVELOP</h1>
-	<p class={animation ? "text-animation": ""}>We build fast, modern and creative websites</p>
+	<p class={animation ? "text-animation": ""}>We build fast, modern and creative websites
+	</p>
 	<p class={animation ? "text-animation": ""}>Websites that work on any device size</p>
-	<p class={animation ? "text-animation": ""}>Laptops, phones, desktops</p>
+	<p class={animation ? "text-animation": ""}>Mobile, desktops, laptops</p>
 	<div class="three-d">
 		<SC.Canvas antialias alpha>
 			<SC.PerspectiveCamera position={[0, 0, 4]}/>
