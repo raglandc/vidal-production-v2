@@ -57,9 +57,9 @@
 
 <style>
 	svg {
-		width: 100%;
+		width: 120px;
 		height: 98px;
-		padding: 0 1rem;
+		padding-left: 1rem;
 	}
 	.st0 {
 		fill: var(--text-primary)

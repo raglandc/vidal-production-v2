@@ -17,7 +17,7 @@
 <style>
     .container {
         width: 100%;
-        height: 45vh;
+        height: 50vh;
         margin: 0;
         position: relative;
         display: flex;
@@ -56,9 +56,25 @@
 
     p {
         text-align: center;
+        line-height: 1.5;
         color: var(--text-secondary);
         font-size: 2rem;
         padding: 0 2%;
+    }
+
+
+
+    @media only screen and (min-width: 800px){
+        .container {
+            padding: 0 10%;
+        }
+    }
+    
+    
+    @media only screen and (min-width: 1200px){
+        .container {
+            padding: 0 20%;
+        }
     }
 </style>
 

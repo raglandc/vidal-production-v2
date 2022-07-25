@@ -74,10 +74,11 @@ let animateDescription = false;
     .signiture-container {
         display: flex;
         align-items: center;
+        justify-content: center;
         position: absolute;
         bottom: -40px;
         right: -15px;
-        width: 70%;
+        width: max-content;
         height: 25%;
         padding: .5rem 1rem;
         background-color: var(--background-color);
@@ -90,6 +91,17 @@ let animateDescription = false;
         padding: 0 1rem;
         margin: 0;
         border-left: 1px solid var(--text-primary);
+    }
+
+    @media only screen and (min-width: 800px){
+        section {
+            margin: 10% 0;
+        }
+
+        .description {
+            width: 70%;
+            margin: 5% auto;
+        }
     }
 
 </style>
