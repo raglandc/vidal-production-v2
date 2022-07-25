@@ -1,24 +1,64 @@
 <script lang="ts">
-    export let source:string;
+    export let source: string;
+    export let title: string;
+    export let description: string;
 </script>
 
-
-<video autoplay muted>
-    <source src={source} type="video/mp4" />
-    Your browser does not support video tag.
-</video>
+<div class="container">
+    <div class="overlay"/>
+    <video autoplay muted loop>
+        <source src={source} type="video/mp4" />
+        Your browser does not support video tag.
+    </video>
+    <h2>{title}</h2>
+    <p>{description}</p>
+</div>
 
 <style>
     video {
-        width: 100vw;
-        height: 30%;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
-        position: fixed;
+        position: absolute;
         left: 0;
         right: 0;
         top: 0;
         bottom: 0;
+        z-index: -2;
+    }
+
+    .container {
+        width: 100%;
+        height: 40vh;
+        margin: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(17, 17, 17, .7);
         z-index: -1;
+    }
+
+    h2 {
+        letter-spacing: var(--letter-spacing);
+        font-size: 4rem;
+        color: var(--text-primary);
+    }
+
+    p {
+        text-align: center;
+        color: var(--text-secondary);
+        font-size: 2rem;
+        padding: 0 2%;
     }
 </style>
 

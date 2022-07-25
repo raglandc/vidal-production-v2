@@ -9,33 +9,28 @@ let animate = false;
     <h1 class={animate ? "heading-animate" : ""} use:viewport
     on:enterViewport = {() => {
         animate = true;
-        }}
+    }}
     >ABOUT</h1>
-    
     <p class={animate ? "text-animate" : ""}>
         Vidal was founded with the intention of creating eye-catching websites that make the visitor
         say, "woah"
     </p>
-
-    <div>
-        <VideoCard source="https://image.mux.com/X2BJAUZg3MJUXUMntcewWmJijDxt64e8/thumbnail.jpg?token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InQ5UHZucm9ZY0hQNjhYSmlRQnRHTEVVSkVSSXJ0UXhKIn0.eyJ3aWR0aCI6NjQwLCJ0aW1lIjowLCJleHAiOjMxNzE5MjI1MTMwOCwiYXVkIjoidCIsInN1YiI6IlgyQkpBVVpnM01KVVhVTW50Y2V3V21KaWpEeHQ2NGU4In0.lL0JSDU10mOihW4TQY5AQxF1z0ss_jn-daTztr3M18xD0z5HVCxw7x4XwB6OiC5IV2X8koJbDj-PFzr-AxwiG0Fn7hGXw9ddTaYmlv9VBE8b78KZH7e8CuJTSCtYSGQFlFWU2pcWkytd8seSdNE_slknW5g33AFuDTHD2yq-RRqygLPQl-7-ojSUjW2mi7kxLt9q8woeGRFL77uMHXE-OExT02ujHkell8xvWYAJtCIyvdKFODSquOCysnNiw4iQ8n9AoF143XXs3KEvtPq-a6B993tTIQUgKNFcn1q83it2Uaok1Pre38MWKgl7yI69rBz4YU2sLS8F9HACj7Vj7A"/>
-    </div>
+    <VideoCard title="FAST" source="../../../static/fast-keyboard.mp4" description="No one wants to wait for a website to load. Vidal uses technology that is lightening fast. Which means happy customers for you! Yay!"/>
+    <VideoCard title="SEO" source="../../../static/seo-video.mp4" description="SEO is what search engines (Google, Bing, Etc.) use to see what your site is all about. Vidal's websites are built to be extremely SEO friendly."/>
+    <VideoCard title="RESPONSIVE" source="../../../static/mobile-video.mp4" description="More people use their phone to surf the web than ever, having a website that works on devices of all sizes is, well, vital. Vidal has you covered."/>
 </section>
 
 <style>
-    section {
-		grid-column: 2 / -2;
-        margin: 10% auto;
-		min-height: 100vh;
-	}
 
-    div {
+    section {
+        margin: 15% 0;
         grid-column: 1 / -1;
+        min-height: 100vh;
     }
 
 	h1 {
+        margin: 0 5%;
         letter-spacing: var(--letter-spacing);
-		margin: 0.5rem;
 		font-size: 5rem;
 		color: var(--text-primary);
         transform: translateX(-30%);
@@ -48,6 +43,7 @@ let animate = false;
         opacity: 1;
     }
 	p {
+        margin: 10% 5%;
         line-height: 2;
 		font-size: 2rem;
 		color: var(--text-secondary);
