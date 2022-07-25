@@ -12,13 +12,14 @@ let animateDescription = false;
     on:enterViewport = {() => animateHeader = true}
     >ABOUT</h1>
 
+    <div class="video-card-container">
         <VideoCard directionStyle="Left" title="FAST" source="../../../static/fast-keyboard.mp4" description="No one wants to wait for a website to load. Vidal uses technology that is lightening fast. Which means happy customers for you! Yay!"/>
-
+        
         <VideoCard directionStyle="Right" title="SEO" source="../../../static/seo-video.mp4" description="SEO is what search engines (Google, Bing, Etc.) use to see what your site is all about. Vidal's websites are built to be extremely SEO friendly."/>
-
+        
         <VideoCard directionStyle="Left" title="RESPONSIVE" source="../../../static/mobile-video.mp4" description="More people use their phone to surf the web than ever, having a website that works on devices of all sizes is, well, vital. Vidal has you covered."/>
-
-    <div class={animateDescription ? "description-animate description" : "description"} use:viewport on:enterViewport={() => animateDescription=true}>
+    </div>
+        <div class={animateDescription ? "description-animate description" : "description"} use:viewport on:enterViewport={() => animateDescription=true}>
         <p class="description-text">
             “Vidal's promise is to deliver high quality websites that scream modern and professional. Vidal adheres to the KISS method while designing: Keep It Simple Stupid.”
         </p>
@@ -32,17 +33,19 @@ let animateDescription = false;
 <style>
 
     section {
+        position: relative;
         margin: 15% 0;
         grid-column: 1 / -1;
-        min-height: 100vh;
+        min-height: 110vh;
     }
 
 	h1 {
-        text-align: center;
-        margin: 10% 5%;
+        position: absolute;
+        top: -9%;
+        left: 2%;
         letter-spacing: var(--letter-spacing);
-		font-size: 5rem;
-		color: var(--text-primary);
+		font-size: 10rem;
+		color: var(--text-secondary);
         transform: translateX(-30%);
         opacity: 0;
         transition: all 1s ease-in-out;
@@ -52,6 +55,11 @@ let animateDescription = false;
         transform: translateX(0);
         opacity: 1;
     }
+
+    .video-card-container {
+        clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+    }
+
     .description {
         position: relative;
         margin: 30% auto;
@@ -100,6 +108,10 @@ let animateDescription = false;
     @media only screen and (min-width: 800px){
         section {
             margin: 10% 0;
+        }
+
+        h1 {
+            top: -11%;
         }
 
         .description {

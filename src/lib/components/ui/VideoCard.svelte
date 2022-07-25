@@ -112,7 +112,7 @@ import { onMount } from "svelte";
 
 
     @media only screen and (min-width: 800px){
-        .container {
+        .container-left, .container-right {
             padding: 0 10%;
         }
     }
