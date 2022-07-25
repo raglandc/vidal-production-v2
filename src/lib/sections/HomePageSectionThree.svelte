@@ -11,9 +11,13 @@ let animateDescription = false;
     <h1 class={animateHeader ? "heading-animate" : ""} use:viewport
     on:enterViewport = {() => animateHeader = true}
     >ABOUT</h1>
-    <VideoCard title="FAST" source="../../../static/fast-keyboard.mp4" description="No one wants to wait for a website to load. Vidal uses technology that is lightening fast. Which means happy customers for you! Yay!"/>
-    <VideoCard title="SEO" source="../../../static/seo-video.mp4" description="SEO is what search engines (Google, Bing, Etc.) use to see what your site is all about. Vidal's websites are built to be extremely SEO friendly."/>
-    <VideoCard title="RESPONSIVE" source="../../../static/mobile-video.mp4" description="More people use their phone to surf the web than ever, having a website that works on devices of all sizes is, well, vital. Vidal has you covered."/>
+
+        <VideoCard directionStyle="Left" title="FAST" source="../../../static/fast-keyboard.mp4" description="No one wants to wait for a website to load. Vidal uses technology that is lightening fast. Which means happy customers for you! Yay!"/>
+
+        <VideoCard directionStyle="Right" title="SEO" source="../../../static/seo-video.mp4" description="SEO is what search engines (Google, Bing, Etc.) use to see what your site is all about. Vidal's websites are built to be extremely SEO friendly."/>
+
+        <VideoCard directionStyle="Left" title="RESPONSIVE" source="../../../static/mobile-video.mp4" description="More people use their phone to surf the web than ever, having a website that works on devices of all sizes is, well, vital. Vidal has you covered."/>
+
     <div class={animateDescription ? "description-animate description" : "description"} use:viewport on:enterViewport={() => animateDescription=true}>
         <p class="description-text">
             “Vidal's promise is to deliver high quality websites that scream modern and professional. Vidal adheres to the KISS method while designing: Keep It Simple Stupid.”
@@ -57,7 +61,7 @@ let animateDescription = false;
         font-size: 2rem;
         width: 90%;
         text-align: center;
-        transition: all 1s ease-in-out;
+        transition: all 1s ease-out;
         opacity: 0;
     }
 

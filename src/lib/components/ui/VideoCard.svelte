@@ -1,10 +1,30 @@
 <script lang="ts">
+    import viewport from "$lib/utils/useViewportAction";
+import { onMount } from "svelte";
+
     export let source: string;
     export let title: string;
     export let description: string;
+    export let directionStyle: "Left" | "Right";
+
+    let animate = false;
+    let className: string;
+    let containerName: string;
+
+    onMount(() => {
+        if(directionStyle === "Left"){
+            containerName = "container-left";
+            className = "animateVideoLeftIn";
+        }
+        else if(directionStyle === "Right") {
+            containerName = "container-right";
+            className = "animateVideoRightIn";
+        }
+    })
+
 </script>
 
-<div class="container">
+<div use:viewport on:enterViewport={() => animate = true} class={animate ? `${className} ${containerName}` : `${containerName}` }>
     <div class="overlay"/>
     <video autoplay muted loop>
         <source src={source} type="video/mp4" />
@@ -15,7 +35,7 @@
 </div>
 
 <style>
-    .container {
+    .container-right {
         width: 100%;
         height: 50vh;
         margin: 0;
@@ -24,6 +44,23 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        transform: translateX(50%);
+        opacity: 0;
+        transition: 1s all ease-out;
+    }
+
+    .container-left {
+        width: 100%;
+        height: 50vh;
+        margin: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: 1s all ease-out; 
     }
 
     video {
@@ -60,6 +97,16 @@
         color: var(--text-secondary);
         font-size: 2rem;
         padding: 0 2%;
+    }
+
+    .animateVideoRightIn {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .animateVideoLeftIn {
+        transform: translateX(0);
+        opacity: 1;
     }
 
 

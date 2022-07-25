@@ -22,6 +22,7 @@
 		--letter-spacing: 8px;
 	}
 	:global(html) {
+		overflow-x: hidden;
 		position: relative;
 		font-size: 62.5%;
 		font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
