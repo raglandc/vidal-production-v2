@@ -91,7 +91,7 @@
 </section>
 
 <style>
-	.location-point.visible {
+	/* .location-point.visible {
 		transform: scale(1, 1);
 	}
 
@@ -146,7 +146,7 @@
 			-webkit-transform: scale(1.2, 1.2);
 			opacity: 0;
 		}
-	}
+	} */
 
 	.three-scene {
 		position: absolute;
