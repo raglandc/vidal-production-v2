@@ -15,6 +15,17 @@
 </div>
 
 <style>
+    .container {
+        width: 100%;
+        height: 45vh;
+        margin: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     video {
         width: 100%;
         height: 100%;
@@ -25,17 +36,6 @@
         top: 0;
         bottom: 0;
         z-index: -2;
-    }
-
-    .container {
-        width: 100%;
-        height: 40vh;
-        margin: 0;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 
     .overlay {

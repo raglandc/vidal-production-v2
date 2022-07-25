@@ -1,23 +1,28 @@
 <script lang="ts">
 import VideoCard from "$lib/components/ui/VideoCard.svelte";
 import viewport from "$lib/utils/useViewportAction";
+import Signiture from "../../../static/aboutSig.svelte"
 
-let animate = false;
+let animateHeader = false;
+let animateDescription = false;
 </script>
 
 <section>
-    <h1 class={animate ? "heading-animate" : ""} use:viewport
-    on:enterViewport = {() => {
-        animate = true;
-    }}
+    <h1 class={animateHeader ? "heading-animate" : ""} use:viewport
+    on:enterViewport = {() => animateHeader = true}
     >ABOUT</h1>
-    <p class={animate ? "text-animate" : ""}>
-        Vidal was founded with the intention of creating eye-catching websites that make the visitor
-        say, "woah"
-    </p>
     <VideoCard title="FAST" source="../../../static/fast-keyboard.mp4" description="No one wants to wait for a website to load. Vidal uses technology that is lightening fast. Which means happy customers for you! Yay!"/>
     <VideoCard title="SEO" source="../../../static/seo-video.mp4" description="SEO is what search engines (Google, Bing, Etc.) use to see what your site is all about. Vidal's websites are built to be extremely SEO friendly."/>
     <VideoCard title="RESPONSIVE" source="../../../static/mobile-video.mp4" description="More people use their phone to surf the web than ever, having a website that works on devices of all sizes is, well, vital. Vidal has you covered."/>
+    <div class={animateDescription ? "description-animate description" : "description"} use:viewport on:enterViewport={() => animateDescription=true}>
+        <p class="description-text">
+            “Vidal's promise is to deliver high quality websites that scream modern and professional. Vidal adheres to the KISS method while designing: Keep It Simple Stupid.”
+        </p>
+        <div class="signiture-container">
+            <Signiture />
+            <p class="president">President</p>
+        </div>
+    </div>
 </section>
 
 <style>
@@ -29,7 +34,8 @@ let animate = false;
     }
 
 	h1 {
-        margin: 0 5%;
+        text-align: center;
+        margin: 10% 5%;
         letter-spacing: var(--letter-spacing);
 		font-size: 5rem;
 		color: var(--text-primary);
@@ -42,16 +48,48 @@ let animate = false;
         transform: translateX(0);
         opacity: 1;
     }
-	p {
-        margin: 10% 5%;
-        line-height: 2;
-		font-size: 2rem;
-		color: var(--text-secondary);
-        opacity: 0;
+    .description {
+        position: relative;
+        margin: 30% auto;
+        border: 1px solid var(--text-secondary);
+        border-radius: var(--border-radius);
+        padding: 5%;
+        font-size: 2rem;
+        width: 90%;
+        text-align: center;
         transition: all 1s ease-in-out;
-	}
+        opacity: 0;
+    }
 
-    .text-animate {
+    .description-animate {
         opacity: 1;
     }
+
+	.description-text {
+        color: var(--text-primary);
+        margin-top: 0;
+        line-height: 2;
+	}
+
+    .signiture-container {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: -40px;
+        right: -15px;
+        width: 70%;
+        height: 25%;
+        padding: .5rem 1rem;
+        background-color: var(--background-color);
+        border: 1px solid var(--text-secondary);
+        border-radius: var(--border-radius);
+        color: var(--text-primary);
+    }
+
+    .president {
+        padding: 0 1rem;
+        margin: 0;
+        border-left: 1px solid var(--text-primary);
+    }
+
 </style>
