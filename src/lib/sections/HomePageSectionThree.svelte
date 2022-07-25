@@ -46,7 +46,7 @@ let animateDescription = false;
         letter-spacing: var(--letter-spacing);
 		font-size: 10rem;
 		color: var(--text-secondary);
-        transform: translateX(-30%);
+        transform: translateY(50%);
         opacity: 0;
         transition: all 1s ease-in-out;
         
@@ -116,6 +116,19 @@ let animateDescription = false;
 
         .description {
             width: 70%;
+            margin: 5% auto;
+        }
+    }
+
+    @media only screen and (min-width: 1200px){
+
+        h1 {
+            font-size: 13rem;
+        } 
+
+
+        .description {
+            width: 50%;
             margin: 5% auto;
         }
     }

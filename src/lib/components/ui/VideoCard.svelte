@@ -81,7 +81,7 @@ import { onMount } from "svelte";
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(17, 17, 17, .7);
+        background-color: rgba(17, 17, 17, .8);
         z-index: -1;
     }
 
@@ -115,12 +115,17 @@ import { onMount } from "svelte";
         .container-left, .container-right {
             padding: 0 10%;
         }
+
     }
     
     
     @media only screen and (min-width: 1200px){
-        .container {
-            padding: 0 20%;
+        .container-left, .container-right {
+            padding: 0 25%;
+        }
+
+        p {
+            padding: 0 14%;
         }
     }
 </style>
