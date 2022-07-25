@@ -103,8 +103,8 @@
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		margin: 10% auto;
 		padding: 0 5%;
+		margin: 25% 0;
 		grid-column: 1 / -1;
 		min-height: 100vh;
 	}

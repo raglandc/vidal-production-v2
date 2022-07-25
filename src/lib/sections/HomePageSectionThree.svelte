@@ -41,10 +41,10 @@ let animateDescription = false;
 
 	h1 {
         position: absolute;
-        top: -9%;
-        left: 2%;
+        top: -7%;
+        left: 1%;
         letter-spacing: var(--letter-spacing);
-		font-size: 10rem;
+		font-size: 7rem;
 		color: var(--text-secondary);
         transform: translateY(50%);
         opacity: 0;
@@ -112,6 +112,7 @@ let animateDescription = false;
 
         h1 {
             top: -11%;
+            font-size: 13rem;
         }
 
         .description {
@@ -121,12 +122,6 @@ let animateDescription = false;
     }
 
     @media only screen and (min-width: 1200px){
-
-        h1 {
-            font-size: 13rem;
-        } 
-
-
         .description {
             width: 50%;
             margin: 5% auto;

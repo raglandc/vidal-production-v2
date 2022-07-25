@@ -87,7 +87,7 @@ import { onMount } from "svelte";
 
     h2 {
         letter-spacing: var(--letter-spacing);
-        font-size: 4rem;
+        font-size: 3rem;
         color: var(--text-primary);
     }
 
@@ -114,6 +114,10 @@ import { onMount } from "svelte";
     @media only screen and (min-width: 800px){
         .container-left, .container-right {
             padding: 0 10%;
+        }
+
+        h2 {
+            font-size: 4rem;
         }
 
     }

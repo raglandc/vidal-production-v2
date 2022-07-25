@@ -38,6 +38,7 @@
      grid-column: 2 / -2;
      display: grid;
      grid-template-columns: 5% repeat(4, 1fr) 5%;
+     min-height: 100vh;
     }
 
     span {
