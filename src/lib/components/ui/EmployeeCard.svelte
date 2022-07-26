@@ -19,7 +19,7 @@ export let role: string;
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 45rem;
+        min-height: 45rem;
     }
     .employee-picture {
         display: flex;
@@ -47,7 +47,7 @@ export let role: string;
     .role {
         letter-spacing: 5px;
         color: var(--text-primary);
-        font-size: 2em;
+        font-size: 3rem;
         margin: 10% auto 0;
     }
 
@@ -57,4 +57,29 @@ export let role: string;
         width: 80%;
         line-height: 2;
     }
+
+    @media only screen and (min-width: 750px){
+
+        .name {
+            font-size: 3rem;
+        }
+
+        .description {
+            font-size: 2.5rem;
+        }
+		
+	}
+
+
+	@media only screen and (min-width: 1200px){
+
+        .role {
+            margin: 15% 0 0;
+        }
+
+        .description {
+            font-size: 2rem;
+            width: 90%;
+        }
+	}
 </style>

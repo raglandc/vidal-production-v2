@@ -140,4 +140,15 @@
 	.text-animation {
 		opacity: 1;
 	}
+
+	@media only screen and (min-width: 750px){
+		
+		h1 {
+			font-size: 10rem;
+		}
+	
+		p {
+			font-size:3rem;
+		}
+	}
 </style>

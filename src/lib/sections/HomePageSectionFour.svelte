@@ -10,14 +10,14 @@
 
 </script>
 
-<div class="header-container" >
-    <h1 class="meetHeader">
+<div class="header-container" use:viewport on:enterViewport = {() => animatedHeader = true}>
+    <h1 class={animatedHeader ? "meetHeader meetAnimated" : "meetHeader"}>
         MEET
     </h1>
-    <h1 class="theHeader">
+    <h1 class={animatedHeader ? "theHeader theAnimated" : "theHeader"}>
       THE
     </h1>
-    <h1 class="teamHeader">
+    <h1 class={animatedHeader ? "teamHeader teamAnimated" : "teamHeader"}>
         TEAM
     </h1>
 </div>
@@ -46,7 +46,7 @@
      grid-column: 2 / -2;
      display: grid;
      grid-template-columns: 5% repeat(4, 1fr) 5%;
-     min-height: 90vh;
+     min-height: 80vh;
     }
 
     .header-container {
@@ -61,17 +61,40 @@
 
     .meetHeader {
         grid-column: 2 / 5;
+        transform: translateY(90%);
+        opacity: 0;
+        transition: 1s all ease-out;
     }
+
+    .meetAnimated {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
     .theHeader {
         font-size: 3rem;
         color: var(--text-secondary);
         grid-column: 4 / 6;
         grid-row: 2 / 3 ;
+        opacity: 0;
+        transition: 1s all ease-out;
+    }
+
+    .theAnimated {
+        opacity: 1;
     }
 
     .teamHeader {
         grid-column: 5 / -2;
         grid-row: 3 / 4;
+        transform: translateY(-90%);
+        opacity: 0;
+        transition:1s all ease-out;
+    }
+
+    .teamAnimated {
+        transform: translateY(0);
+        opacity: 1;
     }
 
     span {
@@ -105,6 +128,19 @@
         grid-column: 2 / -2;
     }
 
+    @media only screen and (min-width: 750px){
+        .header-container {
+            margin: 0 0 10%;
+        }
+		
+		h1 {
+			font-size: 9rem;
+		}
+
+        .theHeader {
+            font-size: 5rem;
+        }
+	}
 
     @media only screen and (min-width: 1200px) {
         section {
@@ -114,15 +150,26 @@
 
         .header-container {
             grid-template-columns: 20% repeat(6, 1fr) 20%;
-            margin: 5% 0 10%;
+            margin: 0 0 5%;
         }
 
         h1 {
             font-size: 8rem;
         }
 
+        .meetHeader {
+            grid-column: 2 / 4;
+            grid-row: 2 / 3;
+        }
+
         .theHeader {
+            grid-column: 4 / 6;
             font-size: 6rem;
+        }
+
+        .teamHeader {
+            grid-column: 6 / 8;
+            grid-row: 2 / 3;
         }
 
         .card-one {

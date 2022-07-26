@@ -63,19 +63,20 @@ let animateDescription = false;
     }
     
     .description-container {
-        min-height: 60vh;
+        transform: translateY(-18%);
+        min-height: 55vh;
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 5% auto;
-        clip-path: polygon(0 12%, 100% 0, 100% 90%, 0 100%);
+        clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
         background-color: var(--text-primary);
         grid-column: 1 / -1;
     }
 
     .description {
-        margin: 10% auto;
+        margin: 5% auto;
         position: relative;
         border: 1px solid var(--text-secondary);
         border-radius: var(--border-radius);
@@ -129,6 +130,10 @@ let animateDescription = false;
             font-size: 13rem;
         }
 
+        .description-container {
+            transform: translateY(-25%);
+        }
+
         .description {
             width: 70%;
             margin: 10% auto;
@@ -136,9 +141,19 @@ let animateDescription = false;
     }
 
     @media only screen and (min-width: 1200px){
+
+        h1 {
+            top: -15%;
+        }
+
+
         .description {
             width: 50%;
             margin: 10% auto;
+        }
+
+        .description-container {
+            transform: translateY(-28%);
         }
     }
 
