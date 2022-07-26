@@ -63,14 +63,13 @@ let animateDescription = false;
     }
     
     .description-container {
-        transform: translateY(-18%);
-        min-height: 55vh;
+        min-height: 60vh;
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 5% auto;
-        clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+        clip-path: polygon(0 13%, 100% 0, 100% 87%, 0 100%);
         background-color: var(--text-primary);
         grid-column: 1 / -1;
     }
@@ -131,7 +130,6 @@ let animateDescription = false;
         }
 
         .description-container {
-            transform: translateY(-25%);
         }
 
         .description {
@@ -153,7 +151,6 @@ let animateDescription = false;
         }
 
         .description-container {
-            transform: translateY(-28%);
         }
     }
 
