@@ -36,25 +36,22 @@ let animateDescription = false;
 
     section {
         position: relative;
+        overflow-x: hidden;
         margin: 15% 0 0;
         grid-column: 1 / -1;
         min-height: 110vh;
     }
 
 	h1 {
-        position: absolute;
-        top: -7%;
-        left: 1%;
         letter-spacing: var(--letter-spacing);
 		font-size: 7rem;
 		color: var(--text-secondary);
-        transform: translateY(50%);
+        margin-bottom: 0;
         opacity: 0;
         transition: all 1s ease-in-out;
         
 	}
     .heading-animate {
-        transform: translateX(0);
         opacity: 1;
     }
 
@@ -125,11 +122,7 @@ let animateDescription = false;
         }
 
         h1 {
-            top: -11%;
-            font-size: 13rem;
-        }
-
-        .description-container {
+            font-size: 10rem;
         }
 
         .description {
@@ -139,19 +132,11 @@ let animateDescription = false;
     }
 
     @media only screen and (min-width: 1200px){
-
-        h1 {
-            top: -15%;
-        }
-
-
         .description {
             width: 50%;
             margin: 10% auto;
         }
 
-        .description-container {
-        }
     }
 
 </style>

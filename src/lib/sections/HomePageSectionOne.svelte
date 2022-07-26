@@ -151,6 +151,7 @@
 	.three-scene {
 		position: absolute;
 		top: 0%;
+		right: 0%;
 		margin: 0;
 		padding: 0;
 		height: 100%;
@@ -198,11 +199,11 @@
 	@media only screen and (min-width: 750px){
 		
 		h1 {
-			font-size: 10rem;
+			font-size: 9rem;
 		}
 	
 		p {
-			font-size:3rem;
+			font-size:2.5rem;
 		}
 	}
 

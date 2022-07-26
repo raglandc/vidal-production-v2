@@ -142,13 +142,17 @@
 	}
 
 	@media only screen and (min-width: 750px){
+
+		section {
+			margin: 5% 0;
+		}
 		
 		h1 {
-			font-size: 10rem;
+			font-size: 9rem;
 		}
 	
 		p {
-			font-size:3rem;
+			font-size:2.5rem;
 		}
 	}
 </style>

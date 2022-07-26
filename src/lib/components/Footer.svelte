@@ -11,7 +11,7 @@
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		min-height: 20vh;
+		min-height: 30vh;
 
 		margin: 2rem auto 0;
 		padding: 2rem 1rem;

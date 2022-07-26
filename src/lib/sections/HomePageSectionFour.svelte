@@ -111,7 +111,7 @@
     h1 {
         margin: 0;
         letter-spacing: var(--letter-spacing);
-        font-size: 5rem;
+        font-size: 4rem;
         color: var(--text-primary);
     }
 
@@ -134,7 +134,7 @@
         }
 		
 		h1 {
-			font-size: 9rem;
+			font-size: 7rem;
 		}
 
         .theHeader {
@@ -154,7 +154,7 @@
         }
 
         h1 {
-            font-size: 8rem;
+            font-size: 9rem;
         }
 
         .meetHeader {
