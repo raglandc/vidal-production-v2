@@ -19,7 +19,9 @@ let animateDescription = false;
         
         <VideoCard directionStyle="Left" title="RESPONSIVE" source="../../../static/mobile-video.mp4" description="More people use their phone to surf the web than ever, having a website that works on devices of all sizes is, well, vital. Vidal has you covered."/>
     </div>
-        <div class={animateDescription ? "description-animate description" : "description"} use:viewport on:enterViewport={() => animateDescription=true}>
+</section>
+<div class="description-container">
+    <div class={animateDescription ? "description-animate description" : "description"} use:viewport on:enterViewport={() => animateDescription=true}>
         <p class="description-text">
             “Vidal's promise is to deliver high quality websites that scream modern and professional. Vidal adheres to the KISS method while designing: Keep It Simple Stupid.”
         </p>
@@ -28,13 +30,13 @@ let animateDescription = false;
             <p class="president">President</p>
         </div>
     </div>
-</section>
+</div>
 
 <style>
 
     section {
         position: relative;
-        margin: 15% 0;
+        margin: 15% 0 0;
         grid-column: 1 / -1;
         min-height: 110vh;
     }
@@ -59,10 +61,22 @@ let animateDescription = false;
     .video-card-container {
         clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
     }
+    
+    .description-container {
+        min-height: 60vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5% auto;
+        clip-path: polygon(0 12%, 100% 0, 100% 90%, 0 100%);
+        background-color: var(--text-primary);
+        grid-column: 1 / -1;
+    }
 
     .description {
+        margin: 10% auto;
         position: relative;
-        margin: 30% auto;
         border: 1px solid var(--text-secondary);
         border-radius: var(--border-radius);
         padding: 5%;
@@ -78,7 +92,7 @@ let animateDescription = false;
     }
 
 	.description-text {
-        color: var(--text-primary);
+        color: var(--background-color);
         margin-top: 0;
         line-height: 2;
 	}
@@ -107,7 +121,7 @@ let animateDescription = false;
 
     @media only screen and (min-width: 800px){
         section {
-            margin: 10% 0;
+            margin: 10% 0 0;
         }
 
         h1 {
@@ -117,14 +131,14 @@ let animateDescription = false;
 
         .description {
             width: 70%;
-            margin: 5% auto;
+            margin: 10% auto;
         }
     }
 
     @media only screen and (min-width: 1200px){
         .description {
             width: 50%;
-            margin: 5% auto;
+            margin: 10% auto;
         }
     }
 
