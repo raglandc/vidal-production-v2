@@ -10,9 +10,17 @@
 
 </script>
 
-<h1 use:viewport on:enterViewport={() => {
-    animatedHeader = true;
-    }} class={animatedHeader ? "animated" : ""}>MEET THE TEAM</h1>
+<div class="header-container" >
+    <h1 class="meetHeader">
+        MEET
+    </h1>
+    <h1 class="theHeader">
+      THE
+    </h1>
+    <h1 class="teamHeader">
+        TEAM
+    </h1>
+</div>
 <section>
     <span use:viewport on:enterViewport={() => {
         animatedCardOne = true;
@@ -38,7 +46,32 @@
      grid-column: 2 / -2;
      display: grid;
      grid-template-columns: 5% repeat(4, 1fr) 5%;
-     min-height: 100vh;
+     min-height: 90vh;
+    }
+
+    .header-container {
+        margin: 5% 0 25%;
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 2% repeat(6, 1fr) 2%;
+        grid-template-rows: repeat(3, 1fr);
+        align-items: center;
+        text-align: center;
+    }
+
+    .meetHeader {
+        grid-column: 2 / 5;
+    }
+    .theHeader {
+        font-size: 3rem;
+        color: var(--text-secondary);
+        grid-column: 4 / 6;
+        grid-row: 2 / 3 ;
+    }
+
+    .teamHeader {
+        grid-column: 5 / -2;
+        grid-row: 3 / 4;
     }
 
     span {
@@ -53,16 +86,12 @@
     }
 
     h1 {
+        margin: 0;
         letter-spacing: var(--letter-spacing);
-        font-size: 4rem;
-        margin: 10% 0;
+        font-size: 5rem;
         color: var(--text-primary);
-        grid-column: -1 / 1;
-        text-align: center;
-        opacity: 0;
-        transform: translateY(25%);
-        transition: all 1s ease-out;
     }
+
 
     .card-one {
         grid-column: 2 / -2;
@@ -81,6 +110,19 @@
         section {
             grid-template-columns: 10% repeat(12, 1fr) 10%;
             grid-gap: 2rem;
+        }
+
+        .header-container {
+            grid-template-columns: 20% repeat(6, 1fr) 20%;
+            margin: 5% 0 10%;
+        }
+
+        h1 {
+            font-size: 8rem;
+        }
+
+        .theHeader {
+            font-size: 6rem;
         }
 
         .card-one {
