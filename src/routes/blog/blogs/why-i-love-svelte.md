@@ -14,13 +14,13 @@ url: 'https://images.unsplash.com/photo-1593720213428-28a5b9e94613?ixlib=rb-1.2.
 
 # A Little Svelte History
 
-Svelte was created in 2016 by the man, the myth, the legend, Rich Harris. At the time of creating Svelte and me writing this article, Rich works at The New York Times.
+Svelte was created in 2016 by the man, the myth, the legend, Rich Harris. At the time of creating Svelte Rich was working at the New York Times.
 
 The name Svelte was used by Rich and his co-workers to describe their project, what was "fast" and "lean". Svelte by definition, according to Oxford Languages, is an adjective that means slender and elegant.
 
 He has stated in several interviews that he got the idea for Svelte as a means to a problem he faced at work.
 
-Which was creating immersive experiences for readers visiting The New York Times, without having to create a huge project for each experience.
+Which was creating immersive experiences for readers visiting The New York Times, without having to send that end user a massive bundle of Javascript.
 
 # What makes Svelte Different, Is Reason #1: No virtual DOM
 
@@ -50,7 +50,7 @@ Since Svelte is compiled it is technically its own language. That is how we are 
 
 Instead of shipping an entire library when a user visits a site, Svelte only ships the Javascript that your user needs. This technique results in a very fast and performant website.
 
-# Reason 3: Speed of development
+# And Finally Reason 3: Speed of Development
 
 The first difference I noticed when I started building with Svelte was the change in size of my files. I initially started building my personal website with Next.js, a React framework.
 
