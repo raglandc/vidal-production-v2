@@ -1,6 +1,6 @@
 ---
 title: 'How to add .glb/.gltf file to your Svelte Cubed scene'
-date: '07-18-2022'
+date: '08-18-2022'
 description: 'Learn how to add your .glb or .gltf files to your Svelte Cubed scene.'
 readTime: 10
 url: 'https://images.unsplash.com/photo-1655635949384-f737c5133dfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80'
