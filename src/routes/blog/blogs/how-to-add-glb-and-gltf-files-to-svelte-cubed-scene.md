@@ -9,6 +9,7 @@ url: 'https://images.unsplash.com/photo-1655635949384-f737c5133dfe?ixlib=rb-1.2.
 <script>
 	import BlogWarning from "$lib/components/ui/BlogWarning.svelte"
 	import BlogImage from "$lib/components/ui/BlogImage.svelte"
+    import BlogBackButton from "$lib/components/ui/BlogBackButton.svelte" 
 </script>
 
 ## Prerequisites
@@ -313,3 +314,5 @@ If you still can not see your model, try to scale and or re-position your model.
 ## Conclusion
 
 These are the steps I took to use .glb files in this website. Svelte Cubed is still very much in the projects infancy at the time of writing this article. This process may be simplified in the future. However, compared to what it would have taken in a standard three.js project this is really nice as a developer.
+
+<BlogBackButton/>

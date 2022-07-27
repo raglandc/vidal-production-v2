@@ -8,6 +8,7 @@ url: 'https://images.unsplash.com/photo-1593720213428-28a5b9e94613?ixlib=rb-1.2.
 
 <script>
 	import BlogImage from "$lib/components/ui/BlogImage.svelte";
+	import BlogBackButton from "$lib/components/ui/BlogBackButton.svelte";
 </script>
 <br/>
 <BlogImage src={url} alt="Svelte code on a computer screen"/>
@@ -76,3 +77,5 @@ So to Svelte Core Team and Contributors... Thank you.
 
 "Svelte Origins: A Javascript Documentary" <em> OfferZen Origins </em> June 21, 2022.
 https://www.youtube.com/watch?v=kMlkCYL9qo0&t=1127s
+
+<BlogBackButton/>
