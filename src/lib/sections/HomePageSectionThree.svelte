@@ -35,7 +35,6 @@ let animateDescription = false;
 <style>
 
     section {
-        position: relative;
         overflow-x: hidden;
         margin: 15% 0 0;
         grid-column: 1 / -1;
@@ -46,7 +45,7 @@ let animateDescription = false;
         letter-spacing: var(--letter-spacing);
 		font-size: 7rem;
 		color: var(--text-secondary);
-        margin-bottom: 0;
+        margin: auto 0 0 2%;
         opacity: 0;
         transition: all 1s ease-in-out;
         
