@@ -65,7 +65,7 @@ export let role: string;
         }
 
         .description {
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
 		
 	}
@@ -78,7 +78,7 @@ export let role: string;
         }
 
         .description {
-            font-size: 2rem;
+            font-size: 2.5rem;
             width: 90%;
         }
 	}

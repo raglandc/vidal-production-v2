@@ -119,11 +119,6 @@ import { onMount } from "svelte";
         h2 {
             font-size: 4rem;
         }
-
-        p {
-            font-size: 2.5rem;
-        }
-
     }
     
     
@@ -138,6 +133,7 @@ import { onMount } from "svelte";
 
         p {
             padding: 0 14%;
+            font-size: 2.5rem;
         }
     }
 </style>
