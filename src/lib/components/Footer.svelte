@@ -3,7 +3,7 @@
 	const currentYear = currentTime.getFullYear();
 </script>
 
-<footer>&copy; {currentYear} Vidal </footer>
+<footer>&copy; {currentYear} Vidal. All Rights Reserved </footer>
 
 <style>
 	footer {

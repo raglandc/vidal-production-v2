@@ -31,7 +31,7 @@ The larger the file, the more time you can expect to be waiting.
 
 # Solution: shake that tree!
 
-An interesting a brilliant approach to helping with this problem is tree shaking.
+An interesting and brilliant approach to helping with this problem is tree shaking.
 
 Before we build our final project and determine what is to be sent to the user, we shake the tree.
 
