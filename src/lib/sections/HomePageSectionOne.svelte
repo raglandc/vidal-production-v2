@@ -202,17 +202,18 @@
 			font-size: 9rem;
 		}
 	
-		p {
-			font-size:2.5rem;
-		}
 	}
-
-
+	
+	
 	@media only screen and (min-width: 1200px){
-
-
+		
+		
 		.text-container {
 			transform: translateY(-70%);
+		}
+		
+		p {
+			font-size:2.5rem;
 		}
 	}
 </style>

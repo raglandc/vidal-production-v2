@@ -55,7 +55,7 @@
 	<p class={animation ? "text-animation": ""}>We build fast, modern and creative websites
 	</p>
 	<p class={animation ? "text-animation": ""}>Websites that work on any device size</p>
-	<p class={animation ? "text-animation": ""}>Mobile, desktops, laptops</p>
+	<p class={animation ? "text-animation": ""}>Mobile, laptops & desktops</p>
 	<div class="three-d">
 		<SC.Canvas antialias alpha>
 			<SC.PerspectiveCamera position={[0, 0, 4]}/>
@@ -69,15 +69,15 @@
 					position={[0,1.2,0]}
 				/>
 				<SC.Primitive
-					scale={0.4}
-					object={monitorModel.scene}
-					rotation={[0, -Math.sin(Math.PI * spin * .25), 0]}
-					position={[0,0,0]}
-				/>
-				<SC.Primitive
 					scale={0.5}
 					object={laptopModel.scene}
 					rotation={[0, Math.sin(Math.PI * spin * .25), 0]}
+					position={[0,0,0]}
+				/>
+				<SC.Primitive
+					scale={0.4}
+					object={monitorModel.scene}
+					rotation={[0, -Math.sin(Math.PI * spin * .25), 0]}
 					position={[0,-1.20,0]}
 				/>
 			{/if}
