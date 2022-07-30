@@ -11,7 +11,7 @@ onMount(() => {
         scrollPostion = document.documentElement.scrollTop;
         videoLength = video.duration;
         video.currentTime = (scrollPostion / (document.documentElement.scrollHeight - window.scrollY)) * videoLength;
-        console.log(video.currentTime);
+        console.log(video.currentTime, video.duration);
     }
 
     window.addEventListener("scroll", () => {
@@ -24,9 +24,9 @@ onMount(() => {
 
 </script>
 
-<section style="height:{video ? videoLength * 10 : "100"}vh;">
+<section style="min-height:{video ? videoLength * 50 : "100"}vh">
     <h1>Projects</h1>
-    <video bind:this={video} src="../../static/blender.mp4">
+    <video bind:this={video} src="../../static/blenderAnimation.mp4">
     <track kind="captions"/>
     </video>
 </section>
