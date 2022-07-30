@@ -19,9 +19,6 @@ onMount(() => {
     })
 
 })
-
-
-
 </script>
 
 <section style="min-height:{video ? videoLength * 50 : "100"}vh">
@@ -30,8 +27,6 @@ onMount(() => {
     <track kind="captions"/>
     </video>
 </section>
-
-
 
 
 
@@ -54,7 +49,7 @@ onMount(() => {
         min-width: 100%;
         width: auto;
         transform: translate(-50%, -50%);
-        background-size: cover;
+        object-fit: cover;
         z-index: -1;
 
     }
