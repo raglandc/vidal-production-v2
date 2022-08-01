@@ -16,7 +16,6 @@
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@types/prismjs": "^1.26.0",
-		"@types/scrollmagic": "^2.0.2",
 		"@types/three": "^0.141.0",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
@@ -37,7 +36,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"scrollmagic": "^2.0.8",
 		"svelte-cubed": "^0.2.1",
 		"svelte-icons": "^2.1.0",
 		"three": "^0.142.0"
