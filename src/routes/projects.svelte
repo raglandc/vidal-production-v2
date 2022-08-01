@@ -49,7 +49,7 @@ onMount(() => {
         min-width: 100%;
         width: auto;
         transform: translate(-50%, -50%);
-        object-fit: cover;
+        background-size: cover;
         z-index: -1;
 
     }
