@@ -1,5 +1,7 @@
 <script lang="ts">
 import { onMount } from "svelte";
+//@ts-ignore
+import ScrollMagic from "scrollmagic";
 
 
 let scrollPostion: number;
@@ -7,6 +9,13 @@ let video: HTMLVideoElement;
 let videoLength:number;
 
 onMount(() => {
+
+    const controller = new ScrollMagic.Controller();
+
+    console.log(controller);
+
+
+
     function scrollVideo() {
         scrollPostion = document.documentElement.scrollTop;
         videoLength = video.duration;
