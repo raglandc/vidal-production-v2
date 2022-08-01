@@ -22,16 +22,10 @@
 	onMount(() => {
 		//Load the GLB file for the scene
 		loader.load(
-			'../../../static/earth.glb',
+			'/earth.glb',
 			(gltf) => {
 				model = gltf;
 			},
-			() => {
-				console.log('GLB Loading in Progress...');
-			},
-			(error) => {
-				console.log('ERROR: ', error);
-			}
 		);
 
 		points = [

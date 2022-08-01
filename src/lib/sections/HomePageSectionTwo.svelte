@@ -17,19 +17,19 @@
 
 	onMount(() => {
 		loader.load(
-			'../../../static/phone.glb',
+			'/phone.glb',
 			(gltf) => {
 				phoneModel = gltf;
 			},
 		);
 		loader.load(
-			'../../static/monitor.glb',
+			'/monitor.glb',
 			(gltf) => {
 				monitorModel = gltf;
 			},
 		);
 		loader.load(
-			'../../static/laptop.glb',
+			'/laptop.glb',
 			(gltf) => {
 				laptopModel = gltf;
 			},
