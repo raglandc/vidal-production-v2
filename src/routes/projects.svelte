@@ -21,7 +21,7 @@ $: {
     bind:duration
     preload="metadata"
     muted
-    src="../../static/blenderAnimation.mp4">
+    src="/blenderAnimation.mp4">
         <track kind="captions"/>
     </video>
 </div>
