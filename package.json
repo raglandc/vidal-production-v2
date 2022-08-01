@@ -36,6 +36,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@threlte/core": "^4.3.1",
+		"@threlte/extras": "^4.1.0",
 		"svelte-cubed": "^0.2.1",
 		"svelte-icons": "^2.1.0",
 		"three": "^0.142.0"

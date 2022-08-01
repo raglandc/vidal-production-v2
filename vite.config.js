@@ -9,7 +9,7 @@ const config = {
 		}
 	},
 	ssr: {
-		noExternal: ['three']
+		noExternal: ['three', 'troika-three-text']
 	}
 };
 
