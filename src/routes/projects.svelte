@@ -1,47 +1,41 @@
 <script lang="ts">
-import { onMount } from "svelte";
-//@ts-ignore
-import ScrollMagic from "scrollmagic";
+let time = 0;
+let duration: number;
+
+let scrollY = 0;
+
+$: {
+    const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+    time = duration * (scrollY / totalScroll);
+}
 
 
-let scrollPostion: number;
-let video: HTMLVideoElement;
-let videoLength:number;
-
-onMount(() => {
-
-    const controller = new ScrollMagic.Controller();
-
-    console.log(controller);
-
-
-
-    function scrollVideo() {
-        scrollPostion = document.documentElement.scrollTop;
-        videoLength = video.duration;
-        video.currentTime = (scrollPostion / (document.documentElement.scrollHeight - window.scrollY)) * videoLength;
-        console.log(video.currentTime, video.duration);
-    }
-
-    window.addEventListener("scroll", () => {
-        scrollVideo();
-    })
-
-})
 </script>
 
-<section style="min-height:{video ? videoLength * 50 : "100"}vh">
-    <h1>Projects</h1>
-    <video bind:this={video} src="../../static/blenderAnimation.mp4">
-    <track kind="captions"/>
+<svelte:window bind:scrollY />
+
+<div class="video-container">
+    <video
+    bind:currentTime={time}
+    bind:duration
+    preload="metadata"
+    muted
+    src="../../static/blenderAnimation.mp4">
+        <track kind="captions"/>
     </video>
+</div>
+
+<section  class="scroll-container">
+    <h1>Projects</h1>
 </section>
 
 
 
 <style>
-    section {
+    .scroll-container {
         position: relative;
+        height: 5000px;
         grid-column: 1 / -1;
     }
 
@@ -50,16 +44,21 @@ onMount(() => {
         color: var(--text-primary);
     }
 
-    video {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        min-height: 100%;
-        min-width: 100%;
-        width: auto;
-        transform: translate(-50%, -50%);
-        background-size: cover;
-        z-index: -1;
-
+    .video-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
     }
+    .video-container video {
+        z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 </style>
