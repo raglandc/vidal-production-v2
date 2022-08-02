@@ -102,7 +102,6 @@
 	a {
 		width: 100%;
 		height: 6rem;
-		font-size: 2rem;
 		padding: 0 10%;
 		display: flex;
 		justify-content: space-between;

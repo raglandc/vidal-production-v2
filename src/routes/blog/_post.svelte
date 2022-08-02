@@ -40,7 +40,6 @@
     }
     
     h1 {
-        font-size: var(--font-header-mobile);
         color: var(--text-primary)
     }
     

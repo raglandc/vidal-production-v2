@@ -72,7 +72,6 @@
     }
 
     .theHeader {
-        font-size: var(--font-p-mobile);
         color: var(--text-secondary);
         grid-column: 4 / 6;
         grid-row: 2 / 3 ;
@@ -111,7 +110,6 @@
     h1 {
         margin: 0;
         letter-spacing: var(--letter-spacing);
-        font-size: var(--font-header-mobile);
         color: var(--text-primary);
     }
 
@@ -131,14 +129,6 @@
     @media only screen and (min-width: 750px){
         .header-container {
             margin: 0 0 10%;
-        }
-		
-		h1 {
-			font-size: var(--font-header-desktop);
-		}
-
-        .theHeader {
-            font-size: var(--font-header-mobile);
         }
 	}
 

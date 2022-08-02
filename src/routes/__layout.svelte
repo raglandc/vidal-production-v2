@@ -22,29 +22,22 @@
 		--button-hover: #c4b5fd;
 		--border-radius: 8px;
 		--letter-spacing: 8px;
-		--font-header-mobile: 5rem;
-		--font-header-desktop: 8rem;
-		--font-p-mobile: 2rem;
-		--font-p-desktop: 2.5rem;
 	}
-	:global(html) {
+	:global(html, body) {
+		background: var(--background-color);
 		overflow-x: hidden;
 		position: relative;
 		font-size: 62.5%;
 		font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
 			Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	}
-	:global(body) {
-		font-size: 1.6rem;
-		margin: 0;
-		padding: 0;
-		background: var(--background-color);
-	}
 	:global(a) {
 		text-decoration: none;
 		color: inherit;
 	}
 	:global(*) {
+		margin: 0;
+		padding: 0;
 		box-sizing: border-box;
 	}
 

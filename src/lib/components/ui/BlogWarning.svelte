@@ -24,7 +24,6 @@
 
     .expoint {
         margin: 1.5rem;
-        font-size: 3rem;
     }
 
     .warning-text{

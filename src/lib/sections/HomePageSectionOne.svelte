@@ -43,34 +43,17 @@
 	h1 {
 		width: max-content;
 		letter-spacing: var(--letter-spacing);
-		font-size: var(--font-header-mobile);
 		margin: 0.5rem auto;
 		color: var(--text-primary);
 	}
 
 	p {
-		font-size: var(--font-p-mobile);
 		color: var(--text-secondary);
 	}
 
-	@media only screen and (min-width: 750px){
-		
-		h1 {
-			font-size: var(--font-header-desktop);
-		}
-	
-	}
-	
-	
 	@media only screen and (min-width: 1200px){
-		
-		
 		.text-container {
 			transform: translateY(-70%);
-		}
-		
-		p {
-			font-size:var(--font-p-desktop);
 		}
 	}
 </style>

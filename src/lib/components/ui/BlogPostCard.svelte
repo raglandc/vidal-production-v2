@@ -70,7 +70,6 @@
 
     span {
         color: var(--background-color);
-        font-size: 1.2rem;
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: .05em;
@@ -85,10 +84,4 @@
         border-top-right-radius: var(--border-radius);
     }
 
-    @media only screen and (max-width: 1200px) {
-        h1 {
-            font-size: 2.4rem;
-        }
-
-    }
 </style>

@@ -16,7 +16,6 @@ export let role: string;
 </div>  
 <style>
     .card {
-        font-size: var(--font-p-mobile);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -57,16 +56,6 @@ export let role: string;
         width: 80%;
         line-height: 2;
     }
-
-    @media only screen and (min-width: 750px){
-
-        .name {
-            font-size: 3rem;
-        }
-
-	}
-
-
 	@media only screen and (min-width: 1200px){
 
         .role {

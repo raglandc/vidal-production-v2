@@ -169,7 +169,6 @@
 		color: var(--text-primary);
 		padding: 0.5rem;
 		background-color: var(--background-color);
-		font-size: larger;
 		border: none;
 	}
 

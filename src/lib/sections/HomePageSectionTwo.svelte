@@ -112,7 +112,6 @@
 	h1 {
 		letter-spacing: 15px;
 		margin: 0.5rem;
-		font-size: var(--font-header-mobile);
 		color: var(--text-primary);
 		opacity: 0;
 		transition: all 1s ease-in-out;
@@ -126,15 +125,10 @@
 
 
 	p {
-		font-size: 2rem;
 		margin: 1.5rem 0;
 		color: var(--text-secondary);
 		opacity: 0;
 		transition: all 1s ease-in-out;
-	}
-
-	.three-d-span {
-		font-size: medium;
 	}
 
 	.text-animation {
@@ -142,17 +136,8 @@
 	}
 
 	@media only screen and (min-width: 750px){
-
 		section {
 			margin: 5% 0;
-		}
-		
-		h1 {
-			font-size: var(--font-header-desktop);
-		}
-	
-		p {
-			font-size:var(--font-p-desktop);
 		}
 	}
 </style>

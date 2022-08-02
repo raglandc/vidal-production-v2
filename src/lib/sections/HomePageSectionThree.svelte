@@ -43,7 +43,6 @@ let animateDescription = false;
 
 	h1 {
         letter-spacing: var(--letter-spacing);
-		font-size: var(--font-header-mobile);
 		color: var(--text-primary);
         margin: auto 0 0 2%;
         opacity: 0;
@@ -76,7 +75,6 @@ let animateDescription = false;
         border: 1px solid var(--text-secondary);
         border-radius: var(--border-radius);
         padding: 5%;
-        font-size: var(--font-p-mobile);
         width: 90%;
         text-align: center;
         transition: all 1s ease-out;
@@ -118,10 +116,6 @@ let animateDescription = false;
     @media only screen and (min-width: 800px){
         section {
             margin: 10% 0 0;
-        }
-
-        h1 {
-            font-size: var(--font-header-desktop);
         }
 
         .description {
