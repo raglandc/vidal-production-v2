@@ -4,12 +4,16 @@
 	import {AmbientLight, PointLight, PerspectiveCamera, useLoader, useFrame} from "@threlte/core";
 	import {GLTF} from "@threlte/extras";
 
+    export let totalScroll:number;
+
     //loading the model
 	const loader = useLoader(GLTFLoader, () => new GLTFLoader());
 	const dracoLoader = useLoader(DRACOLoader, () => new DRACOLoader());
 	dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
 	dracoLoader.setDecoderConfig({type: "js"})
 	loader.setDRACOLoader(dracoLoader);
+
+
 
     //animation
 	let spin = 0;
@@ -21,12 +25,12 @@
 </script>
 
 
-<PointLight position={{x: 0, y: 1, z: 2.3}} />
+<PointLight position={{x: 0, y: 1, z: 2.3}} intensity={.8}/>
 <AmbientLight />
 <GLTF 
     url="/phone.glb" 
     rotation={{y: spin}}
-    position={{y: 1.5}}
+    position={{x: totalScroll * .001, y: 1.5}}
     scale={1.2}
 />
 <GLTF 
@@ -37,7 +41,7 @@
 <GLTF 
     url="/monitor.glb" 
     scale={.5}
-    position={{y: -1.5}}
+    position={{x: -totalScroll * .001, y: -1.5}}
     rotation={{y: Math.cos(Math.PI * .5 * spin)}}
 />
 

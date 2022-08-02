@@ -3,11 +3,23 @@
 	import {Canvas} from "@threlte/core"
 	import viewport from "$lib/utils/useViewportAction"
 
+	let scrollY = 0;
+	let sectionHeight = 0;
+	let totalScroll = 0;
+
+	$: {
+		if(scrollY > sectionHeight + 15){
+			totalScroll = scrollY - sectionHeight;
+		}
+	}
+
 	//animation
 	let animation = false;
 </script>
 
-<section>
+<svelte:window bind:scrollY />
+
+<section bind:offsetHeight={sectionHeight}>
 <p class={animation ? "text-animation three-d-span": "three-d-span"}>3D</p>
 <h1 class={animation ? "header-animation" : ""}>DREAM</h1>
 <h1 use:viewport  on:enterViewport={() => animation = true}  class={animation ? "header-animation" : ""}>DESIGN</h1>
@@ -18,7 +30,7 @@
 	<p class={animation ? "text-animation": ""}>Mobile, laptops & desktops</p>
 	<div class="three-d">
 		<Canvas>
-			<HomePageSceneTwo/>
+			<HomePageSceneTwo totalScroll={totalScroll}/>
 		</Canvas>
 	</div>
 </section>

@@ -20,7 +20,7 @@
 
 </script>
 
-<PointLight position={{x: 0, y: .8, z: 2.3}} />
+<PointLight position={{x: 0, y: .8, z: 2.3}} intensity={2}/>
 <AmbientLight />
 <GLTF 
 url="/earth.glb" 
