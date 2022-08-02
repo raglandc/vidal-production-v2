@@ -1,15 +1,6 @@
 <script lang="ts">
-	import {DRACOLoader} from "three/examples/jsm/loaders/DRACOLoader" 
-	import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader" 
 	import {AmbientLight, PointLight, OrbitControls, PerspectiveCamera, useLoader, useFrame} from "@threlte/core";
 	import {GLTF} from "@threlte/extras";
-
-    //loading the model
-	const loader = useLoader(GLTFLoader, () => new GLTFLoader());
-	const dracoLoader = useLoader(DRACOLoader, () => new DRACOLoader());
-	dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
-	dracoLoader.setDecoderConfig({type: "js"})
-	loader.setDRACOLoader(dracoLoader);
 
     //animation
 	let spin = 0;
@@ -20,10 +11,11 @@
 
 </script>
 
-<PointLight position={{x: 0, y: .8, z: 2.3}} intensity={2}/>
+<PointLight position={{x: 0, y: .8, z: 2.3}} power={3}/>/>
 <AmbientLight />
 <GLTF 
-url="/earth.glb" 
+dracoDecoderPath='https://www.gstatic.com/draco/v1/decoders/'
+url={"/earth.glb"} 
 rotation={{x:0, y: spin, z: -Math.PI * .18}}
 position={{y: -1}}
 />

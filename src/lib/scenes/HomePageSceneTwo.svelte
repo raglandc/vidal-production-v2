@@ -1,19 +1,8 @@
 <script lang="ts">
-	import {DRACOLoader} from "three/examples/jsm/loaders/DRACOLoader" 
-	import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader" 
-	import {AmbientLight, PointLight, PerspectiveCamera, useLoader, useFrame} from "@threlte/core";
+	import {AmbientLight, PointLight, PerspectiveCamera, useFrame} from "@threlte/core";
 	import {GLTF} from "@threlte/extras";
 
     export let totalScroll:number;
-
-    //loading the model
-	const loader = useLoader(GLTFLoader, () => new GLTFLoader());
-	const dracoLoader = useLoader(DRACOLoader, () => new DRACOLoader());
-	dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
-	dracoLoader.setDecoderConfig({type: "js"})
-	loader.setDRACOLoader(dracoLoader);
-
-
 
     //animation
 	let spin = 0;
@@ -25,20 +14,23 @@
 </script>
 
 
-<PointLight position={{x: 0, y: 1, z: 2.3}} intensity={.8}/>
+<PointLight position={{x: 0, y: 1, z: 2.3}} power={3}/>
 <AmbientLight />
 <GLTF 
+    dracoDecoderPath='https://www.gstatic.com/draco/v1/decoders/'
     url="/phone.glb" 
     rotation={{y: spin}}
     position={{x: totalScroll * .001, y: 1.5}}
     scale={1.2}
 />
 <GLTF 
+    dracoDecoderPath='https://www.gstatic.com/draco/v1/decoders/'
     url="/laptop.glb" 
     rotation={{y: Math.sin(Math.PI * .5 * spin)}}
     scale={.8}
 />
 <GLTF 
+    dracoDecoderPath='https://www.gstatic.com/draco/v1/decoders/'
     url="/monitor.glb" 
     scale={.5}
     position={{x: -totalScroll * .001, y: -1.5}}
