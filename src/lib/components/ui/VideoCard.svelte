@@ -81,21 +81,21 @@ import { onMount } from "svelte";
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(17, 17, 17, .8);
+        background-color: rgba(17, 17, 17, 0.244);
         z-index: -1;
     }
 
     h2 {
         letter-spacing: var(--letter-spacing);
-        font-size: 3rem;
-        color: var(--text-primary);
+        font-size: 3.5rem;
+        color: var(--background-color);
     }
 
     p {
         text-align: center;
         line-height: 1.5;
         color: var(--text-secondary);
-        font-size: 2rem;
+        font-size: var(--font-p-mobile);
         padding: 0 2%;
     }
 
@@ -133,7 +133,7 @@ import { onMount } from "svelte";
 
         p {
             padding: 0 14%;
-            font-size: 2.5rem;
+            font-size: var(--font-p-desktop);
         }
     }
 </style>

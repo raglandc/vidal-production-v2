@@ -41,35 +41,22 @@
 	}
 
 	h1 {
+		width: max-content;
 		letter-spacing: var(--letter-spacing);
-		font-size: 7rem;
-		margin: 0.5rem;
+		font-size: var(--font-header-mobile);
+		margin: 0.5rem auto;
 		color: var(--text-primary);
-		transform: translateY(-100%);
-		opacity: 0;
-		transition: all 1s ease-out;
-	}
-
-	.header-animation {
-		opacity: 1;
-		transform: translateY(0%);
 	}
 
 	p {
-		font-size: 2rem;
+		font-size: var(--font-p-mobile);
 		color: var(--text-secondary);
-		opacity: 0;
-		transition: all 2s ease-out;
-	}
-
-	.text-animation {
-		opacity: 1;
 	}
 
 	@media only screen and (min-width: 750px){
 		
 		h1 {
-			font-size: 9rem;
+			font-size: var(--font-header-desktop);
 		}
 	
 	}
@@ -83,7 +70,7 @@
 		}
 		
 		p {
-			font-size:2.5rem;
+			font-size:var(--font-p-desktop);
 		}
 	}
 </style>

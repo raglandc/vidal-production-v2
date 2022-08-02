@@ -72,7 +72,7 @@
     }
 
     .theHeader {
-        font-size: 3rem;
+        font-size: var(--font-p-mobile);
         color: var(--text-secondary);
         grid-column: 4 / 6;
         grid-row: 2 / 3 ;
@@ -111,7 +111,7 @@
     h1 {
         margin: 0;
         letter-spacing: var(--letter-spacing);
-        font-size: 4rem;
+        font-size: var(--font-header-mobile);
         color: var(--text-primary);
     }
 
@@ -134,11 +134,11 @@
         }
 		
 		h1 {
-			font-size: 7rem;
+			font-size: var(--font-header-desktop);
 		}
 
         .theHeader {
-            font-size: 5rem;
+            font-size: var(--font-header-mobile);
         }
 	}
 
@@ -153,10 +153,6 @@
             margin: 0 0 5%;
         }
 
-        h1 {
-            font-size: 9rem;
-        }
-
         .meetHeader {
             grid-column: 2 / 4;
             grid-row: 2 / 3;
@@ -164,7 +160,6 @@
 
         .theHeader {
             grid-column: 4 / 6;
-            font-size: 6rem;
         }
 
         .teamHeader {

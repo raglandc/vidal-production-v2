@@ -16,6 +16,7 @@ export let role: string;
 </div>  
 <style>
     .card {
+        font-size: var(--font-p-mobile);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -47,7 +48,6 @@ export let role: string;
     .role {
         letter-spacing: 5px;
         color: var(--text-primary);
-        font-size: 3rem;
         margin: 10% auto 0;
     }
 
@@ -64,10 +64,6 @@ export let role: string;
             font-size: 3rem;
         }
 
-        .description {
-            font-size: 2rem;
-        }
-		
 	}
 
 
@@ -78,7 +74,6 @@ export let role: string;
         }
 
         .description {
-            font-size: 2.5rem;
             width: 90%;
         }
 	}

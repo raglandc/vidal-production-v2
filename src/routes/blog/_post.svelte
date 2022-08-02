@@ -40,12 +40,12 @@
     }
     
     h1 {
-        font-size: 4rem;
+        font-size: var(--font-header-mobile);
         color: var(--text-primary)
     }
     
     article {
-        background-color: var(--text-primary);
+        background-color: var(--background-color);
         color: #111;
         grid-column: 1 / -1;
         display: grid;

@@ -1,10 +1,8 @@
 <script lang="ts">
 	import {DRACOLoader} from "three/examples/jsm/loaders/DRACOLoader" 
 	import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader" 
-	import {AmbientLight, PointLight, OrbitControls, PerspectiveCamera, useLoader, useFrame, useThrelte} from "@threlte/core";
-	import {GLTF, HTML} from "@threlte/extras";
-    import { onMount } from "svelte";
-    import * as THREE from "three";
+	import {AmbientLight, PointLight, OrbitControls, PerspectiveCamera, useLoader, useFrame} from "@threlte/core";
+	import {GLTF} from "@threlte/extras";
 
     //loading the model
 	const loader = useLoader(GLTFLoader, () => new GLTFLoader());
@@ -14,43 +12,21 @@
 	loader.setDRACOLoader(dracoLoader);
 
     //animation
-    const {camera, renderer, scene} = useThrelte();
-
-    console.log(scene);
-
 	let spin = 0;
-
-    let translateX: number;
-    let translateY: number;
     
-    const points = [{
-            position: new THREE.Vector3(-2.9, 2.2, 0),
-    }]
-
     useFrame(() => {
-        // spin += 0.001;
-
-        for(const point of points){
-            const screenPosition = point.position.clone();
-            screenPosition.project($camera);
-
-            translateX = screenPosition.x ;
-            translateY = screenPosition.y ;
-
-            // point.element.style.transform = `translateX(${translateX}px`
-
-        }
+        spin += 0.0002;
     })
 
 </script>
 
-<PointLight position={{x: 0, y: 2, z: 2}} />
+<PointLight position={{x: 1, y: 1, z: 2.3}} />
 <AmbientLight />
-<GLTF url="/earth.glb" rotation={{x:0, y: spin, z: -Math.PI * .18}}>
-    <HTML transform position={{x: translateX, y: translateY}}>
-        <div class="location-point visible" />
-    </HTML>
-</GLTF>
+<GLTF 
+url="/earth.glb" 
+rotation={{x:0, y: spin, z: -Math.PI * .18}}
+position={{y: -1}}
+/>
 <PerspectiveCamera position={{z: 5}}>
     <OrbitControls 
     enableDamping 

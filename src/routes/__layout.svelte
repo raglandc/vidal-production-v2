@@ -13,13 +13,19 @@
 
 <style>
 	:root {
-		--background-color: #4c1d95;
-		--text-primary: #f5f3ff;
-		--text-secondary: #a78bfa;
+		--background-color: #fafafa;
+		--primary-color: #4f46e5;
+		--secondary-color: #818cf8;
+		--text-primary: #171717;
+		--text-secondary: #737373;
 		--button: #ddd6fe;
 		--button-hover: #c4b5fd;
 		--border-radius: 8px;
 		--letter-spacing: 8px;
+		--font-header-mobile: 5rem;
+		--font-header-desktop: 8rem;
+		--font-p-mobile: 2rem;
+		--font-p-desktop: 2.5rem;
 	}
 	:global(html) {
 		overflow-x: hidden;

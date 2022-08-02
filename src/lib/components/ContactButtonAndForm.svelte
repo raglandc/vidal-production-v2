@@ -114,7 +114,7 @@
 		grid-template-columns: 10% repeat(4, 1fr) 10%;
 		grid-template-rows: auto;
 		width: 90%;
-		background-color: var(--text-primary);
+		background-color: var(--background-color);
 	}
 
 	ul {
@@ -143,7 +143,7 @@
 		margin-right: 1rem;
 		width: 2.5rem;
 		height: 2.5rem;
-		color: var(--background-color);
+		color: var(--text-primary);
 	}
 
 	.contact-header {

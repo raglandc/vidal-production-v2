@@ -112,7 +112,7 @@
 	h1 {
 		letter-spacing: 15px;
 		margin: 0.5rem;
-		font-size: 5rem;
+		font-size: var(--font-header-mobile);
 		color: var(--text-primary);
 		opacity: 0;
 		transition: all 1s ease-in-out;
@@ -148,11 +148,11 @@
 		}
 		
 		h1 {
-			font-size: 9rem;
+			font-size: var(--font-header-desktop);
 		}
 	
 		p {
-			font-size:2.5rem;
+			font-size:var(--font-p-desktop);
 		}
 	}
 </style>

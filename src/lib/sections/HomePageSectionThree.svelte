@@ -43,8 +43,8 @@ let animateDescription = false;
 
 	h1 {
         letter-spacing: var(--letter-spacing);
-		font-size: 7rem;
-		color: var(--text-secondary);
+		font-size: var(--font-header-mobile);
+		color: var(--text-primary);
         margin: auto 0 0 2%;
         opacity: 0;
         transition: all 1s ease-in-out;
@@ -76,7 +76,7 @@ let animateDescription = false;
         border: 1px solid var(--text-secondary);
         border-radius: var(--border-radius);
         padding: 5%;
-        font-size: 2rem;
+        font-size: var(--font-p-mobile);
         width: 90%;
         text-align: center;
         transition: all 1s ease-out;
@@ -121,7 +121,7 @@ let animateDescription = false;
         }
 
         h1 {
-            font-size: 10rem;
+            font-size: var(--font-header-desktop);
         }
 
         .description {
