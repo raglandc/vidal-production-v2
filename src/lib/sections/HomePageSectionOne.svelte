@@ -1,14 +1,27 @@
 <script lang="ts">
 	import {Canvas} from "@threlte/core";
 	import HomePageSceneOne from "../scenes/HomePageSceneOne.svelte";
+	import viewport from "$lib/utils/useViewportAction";
+	
+	let animatedHeader = false;
 </script>
 
 <section >
 	<div class="text-container">
-		<h1><span class="V">V</span>IDAL</h1>
-		<p>A strong online presence is important</p>
-		<p>These days it's vital</p>
-		<p>Meet Vidal</p>
+		<h1 class={animatedHeader ? "animatedHeader" : ""}
+		use:viewport on:enterViewport = {() => animatedHeader = true}
+		>
+		<span 
+		class={animatedHeader ? "animatedHeader V" : "V"}>V</span>IDAL</h1>
+		<p
+		class={animatedHeader ? "animatedHeader" : ""}
+		>A strong online presence is important</p>
+		<p
+		class={animatedHeader ? "animatedHeader" : ""}
+		>These days it's vital</p>
+		<p
+		class={animatedHeader ? "animatedHeader" : ""}
+		>Meet Vidal</p>
 	</div>
 	<div class="three-scene">
 		<Canvas>
@@ -37,6 +50,8 @@
 
 	.V {
 		color: var(--primary-color);
+		transition: all 1.5s ease-out;
+		opacity: 0;
 	}
 
 	.text-container {
@@ -50,12 +65,20 @@
 		letter-spacing: var(--letter-spacing);
 		margin: 0.5rem auto;
 		color: var(--text-primary);
+		opacity: 0;
+		transition: all 1s ease-out;
+	}
+
+	.animatedHeader {
+		opacity: 1;
 	}
 
 	p {
 		margin: .5rem 0;
 		font-size: var(--font-primary-mobile);
 		color: var(--text-secondary);
+		opacity: 0;
+		transition: all 1s ease-out;
 	}
 
 	@media only screen and (min-width: 750px){

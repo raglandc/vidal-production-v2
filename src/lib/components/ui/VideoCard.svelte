@@ -81,7 +81,7 @@ import { onMount } from "svelte";
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(17, 17, 17, 0.244);
+        background-color: rgba(17, 17, 17, 0.716);
         z-index: -1;
     }
 

@@ -27,7 +27,9 @@ $: {
 </div>
 
 <section  class="scroll-container">
-    <h1>Projects</h1>
+    <div class="heading">
+        <h1>Projects</h1>
+    </div>
 </section>
 
 
@@ -39,9 +41,18 @@ $: {
         grid-column: 1 / -1;
     }
 
-    h1 {
-        margin: 0 10%;
-        color: var(--text-primary);
+    .heading {
+        position: absolute;
+        top: 175px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        grid-column: 2 / -2;
+        color: #fff;
+    }
+
+    .heading h1 {
+        font-size: var(--font-h1-mobile);
     }
 
     .video-container {

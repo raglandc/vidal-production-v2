@@ -75,7 +75,7 @@
 	}
 
 	.contact-button {
-		background-color: var(--background-color);
+		background-color: transparent;
 		padding: 0.7rem 1rem;
 		color: var(--text-primary);
 
