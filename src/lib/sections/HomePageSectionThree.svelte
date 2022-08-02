@@ -42,6 +42,7 @@ let animateDescription = false;
     }
 
 	h1 {
+        font-size: var(--font-h1-mobile);
         letter-spacing: var(--letter-spacing);
 		color: var(--text-primary);
         margin: auto 0 0 2%;
@@ -70,6 +71,7 @@ let animateDescription = false;
     }
 
     .description {
+        font-size: var(--font-primary-mobile);
         margin: 5% auto;
         position: relative;
         border: 1px solid var(--text-secondary);
@@ -125,7 +127,11 @@ let animateDescription = false;
     }
 
     @media only screen and (min-width: 1200px){
+        h1{
+            font-size: var(--font-h1-desktop);
+        }
         .description {
+            font-size: var(--font-primary-desktop);
             width: 50%;
             margin: 10% auto;
         }

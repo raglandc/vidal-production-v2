@@ -18,7 +18,7 @@
         <h1>{title}</h1>
         <div class="meta-data">
             <span>{readTime} minute read</span>
-            <span>published: {date}</span>
+            <span>{date}</span>
         </div>
     </header>
     <article>
@@ -40,10 +40,13 @@
     }
     
     h1 {
+        font-size: var(--font-h1-mobile);
+        margin-bottom:0;
         color: var(--text-primary)
     }
     
     article {
+        font-size: var(--font-primary-mobile);
         background-color: var(--background-color);
         color: #111;
         grid-column: 1 / -1;
@@ -58,8 +61,9 @@
     }
 
     .meta-data {
+        font-size: var(--font-primary-mobile);
         width: 100%;
-        margin-bottom: 5%;
+        margin: 5% auto;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -76,8 +80,14 @@
         }
 
         header {
-            padding: 5%;
-            grid-column: 2 / -2;
+            padding: 5% 0 0;
+            grid-column: 3 / -3;
         }
+
+        h1 {
+          font-size: var(--font-h1-desktop);
+        }
+
+
     }
 </style>

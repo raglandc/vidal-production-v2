@@ -48,18 +48,21 @@
     }
     
     h1 {
+        font-size: var(--font-h3-mobile);
         color: var(--background-color);
         margin: 0;
         padding: 1rem;
     }
 
     .description {
+        font-size: var(--font-primary-mobile);
         margin: 0;
         padding: 1rem;
         flex: 1;
     }
 
     .meta-data {
+        font-size: var(--font-secondary-mobile);
         width: 95%;
         margin: 0 auto;
         padding: 1rem;
@@ -83,5 +86,6 @@
         border-top-left-radius: var(--border-radius);
         border-top-right-radius: var(--border-radius);
     }
+
 
 </style>

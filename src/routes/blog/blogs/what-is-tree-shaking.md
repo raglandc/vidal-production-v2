@@ -1,6 +1,6 @@
 ---
 title: 'What is tree shaking?'
-date: '08-30-2022'
+date: 'August 30, 2022'
 description: 'Learn what tree shaking is and why it is important for the performance of your projects.'
 readTime: 3
 url: 'https://benestudio.co/wp-content/uploads/2021/06/tree-shaking-1.png'

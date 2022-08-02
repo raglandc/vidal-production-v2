@@ -86,11 +86,14 @@ import { onMount } from "svelte";
     }
 
     h2 {
+        margin-bottom: 1rem;
+        font-size: var(--font-h2-mobile);
         letter-spacing: var(--letter-spacing);
         color: var(--background-color);
     }
 
     p {
+        font-size: var(--font-primary-mobile);
         text-align: center;
         line-height: 1.5;
         color: var(--text-secondary);
@@ -121,7 +124,12 @@ import { onMount } from "svelte";
             padding: 0 25%;
         }
 
+        h2 {
+            font-size: var(--font-h2-desktop);
+        }
+
         p {
+            font-size: var(--font-primary-desktop);
             padding: 0 14%;
         }
     }

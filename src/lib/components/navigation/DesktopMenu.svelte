@@ -15,6 +15,7 @@
 		margin: 0 auto;
 	}
 	a {
+		font-size: var(--font-secondary-desktop);
 		margin: 0 0.5rem;
 		padding: 0.5rem;
 		text-decoration: none;

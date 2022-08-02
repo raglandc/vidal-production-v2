@@ -96,6 +96,10 @@
 		z-index: -4;
 	}
 
+	.three-d-span {
+		color: var(--primary-color);
+	}
+
 	section {
 		position: relative;
 		display: flex;
@@ -110,6 +114,7 @@
 	}
 
 	h1 {
+		font-size: var(--font-h1-mobile);
 		letter-spacing: 15px;
 		margin: 0.5rem;
 		color: var(--text-primary);
@@ -125,8 +130,9 @@
 
 
 	p {
-		margin: 1.5rem 0;
+		font-size: var(--font-primary-mobile);
 		color: var(--text-secondary);
+		margin: .5rem 0;
 		opacity: 0;
 		transition: all 1s ease-in-out;
 	}
@@ -138,6 +144,15 @@
 	@media only screen and (min-width: 750px){
 		section {
 			margin: 5% 0;
+		}
+	}
+	@media only screen and (min-width: 1200px){
+		h1 {
+			font-size: var(--font-h1-desktop);
+		}
+
+		p {
+			font-size: var(--font-primary-desktop);
 		}
 	}
 </style>

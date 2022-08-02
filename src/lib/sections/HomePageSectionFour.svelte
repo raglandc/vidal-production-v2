@@ -108,6 +108,7 @@
     }
 
     h1 {
+        font-size: var(--font-h1-mobile);
         margin: 0;
         letter-spacing: var(--letter-spacing);
         color: var(--text-primary);
@@ -136,6 +137,10 @@
         section {
             grid-template-columns: 10% repeat(12, 1fr) 10%;
             grid-gap: 2rem;
+        }
+        
+        h1{
+            font-size: var(--font-h1-desktop);
         }
 
         .header-container {

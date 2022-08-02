@@ -79,6 +79,7 @@
 	/* Side drawer styles  */
 
 	.container-side-drawer {
+		font-size: var(--font-primary-mobile);
 		z-index: 100;
 		position: fixed;
 		top: 0;

@@ -66,6 +66,7 @@
     }
 
     .header{
+        font-size: var(--font-primary-mobile);
         color: var(--text-primary);
         display: flex;
         flex-direction: column;
@@ -73,10 +74,11 @@
         align-items: center;
         height: 15vh;
         grid-column: 1 / -1;
-
+        
     }
     h1 {
-        margin: 0;
+        font-size: var(--font-h1-mobile);
+        margin: 0 auto 2%;
     }
 
     input {

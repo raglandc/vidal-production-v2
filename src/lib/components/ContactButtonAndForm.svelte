@@ -20,7 +20,7 @@
 	<div class="overlay" on:click={handleShowContact} transition:fly />
 	<div class="contact-form-container" transition:fly>
 		<div class="contact-header">
-			<h1>Say Hi 👋</h1>
+			<h1>Say <span class="hi">Hi</span> 👋</h1>
 			<button class="close-form-button" on:click={handleShowContact}>x</button>
 		</div>
 		<div class="form-content">
@@ -147,25 +147,31 @@
 	}
 
 	.contact-header {
+		font-size: var(--font-primary-mobile);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		grid-column: 1/-1;
 		height: max-content;
-		padding: 1rem 2rem;
+		padding:1rem 2rem 0;
 		color: var(--text-primary);
-		background-color: var(--background-color);
 		border-top-right-radius: var(--border-radius);
 		border-top-left-radius: var(--border-radius);
 	}
 
+	.hi {
+		color: var(--primary-color);
+	}
+
 	.form-content {
-		margin: 0 0 2rem;
+		margin: 1rem 0 2rem;
 		grid-column: 2 / -2;
-		line-height: 1.5;
+		line-height: 2;
+		font-size: var(--font-primary-mobile);
 	}
 
 	.close-form-button {
+		font-size: var(--font-primary-mobile);
 		color: var(--text-primary);
 		padding: 0.5rem;
 		background-color: var(--background-color);
@@ -183,8 +189,15 @@
 	}
 
 	@media only screen and (min-width: 1000px) {
+		.contact-header{
+			font-size: var(--font-primary-desktop);
+		}
+		.close-form-button {
+			font-size: var(--font-primary-desktop);
+		}
 		.contact-form-container {
 			width: 40%;
 		}
+
 	}
 </style>

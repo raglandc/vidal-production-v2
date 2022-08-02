@@ -3,6 +3,9 @@ export let url: string;
 export let description: string;
 export let name: string;
 export let role: string;
+
+const roleFirstLetter = role[0];
+const roleRemainder = role.substring(1, role.length);
 </script>
 
 
@@ -11,11 +14,12 @@ export let role: string;
     <div class="employee-picture" style="background-image: url({url});">
     <h3 class="name">{name}</h3>
     </div>
-    <p class="role">{role}</p>
+    <p class="role"><span>{roleFirstLetter}</span>{roleRemainder}</p>
     <p class="description">{description}</p>
 </div>  
 <style>
     .card {
+        font-size: var(--font-primary-mobile);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -34,35 +38,42 @@ export let role: string;
     }
 
     .name{
-        background-color: var(--text-secondary);
-        color: var(--text-primary);
+        background-color: var(--text-primary);
+        color: var(--background-color);
         text-align: center;
-        width: 55%;
+        width: 65%;
         margin: 0;
         transform: translateY(40%);
-        padding: 1rem;
+        padding: 1.5rem;
         border-radius: var(--border-radius);
     }
 
+    span {
+        color: var(--primary-color);
+    }
+
     .role {
+        font-size: var(--font-h2-mobile);
         letter-spacing: 5px;
-        color: var(--text-primary);
-        margin: 10% auto 0;
+        margin: 13% auto 5%;
     }
 
     .description {
+        margin: 3% 0 0;
         text-align: center;
         color: var(--text-secondary);
         width: 80%;
-        line-height: 2;
+        line-height: 1.5;
     }
 	@media only screen and (min-width: 1200px){
 
         .role {
+            font-size: var(--font-h3-desktop);
             margin: 15% 0 0;
         }
 
         .description {
+            font-size: var(--font-primary-desktop);
             width: 90%;
         }
 	}
