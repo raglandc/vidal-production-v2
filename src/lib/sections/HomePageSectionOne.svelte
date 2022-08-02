@@ -1,6 +1,6 @@
 <script lang="ts">
 	import {Canvas} from "@threlte/core";
-	import SceneOne from "./SceneOne.svelte";
+	import HomePageSceneOne from "../scenes/HomePageSceneOne.svelte";
 </script>
 
 <section >
@@ -12,7 +12,7 @@
 	</div>
 	<div class="three-scene">
 		<Canvas>
-			<SceneOne/>
+			<HomePageSceneOne/>
 		</Canvas>
 	</div>
 </section>

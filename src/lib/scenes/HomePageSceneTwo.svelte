@@ -1,7 +1,7 @@
 <script lang="ts">
 	import {DRACOLoader} from "three/examples/jsm/loaders/DRACOLoader" 
 	import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader" 
-	import {AmbientLight, PointLight, OrbitControls, PerspectiveCamera, useLoader, useFrame} from "@threlte/core";
+	import {AmbientLight, PointLight, PerspectiveCamera, useLoader, useFrame} from "@threlte/core";
 	import {GLTF} from "@threlte/extras";
 
     //loading the model
@@ -15,23 +15,30 @@
 	let spin = 0;
     
     useFrame(() => {
-        spin += 0.0002;
+        spin += 0.002;
     })
 
 </script>
 
-<PointLight position={{x: 1, y: 1, z: 2.3}} />
+
+<PointLight position={{x: 0, y: 1, z: 2.3}} />
 <AmbientLight />
 <GLTF 
-url="/earth.glb" 
-rotation={{x:0, y: spin, z: -Math.PI * .18}}
-position={{y: -1}}
+    url="/phone.glb" 
+    rotation={{y: spin}}
+    position={{y: 1.5}}
+    scale={1.2}
 />
-<PerspectiveCamera position={{z: 5}}>
-    <OrbitControls 
-    enableDamping 
-    enableZoom={false} 
-    maxPolarAngle={Math.PI * .5}
-    minPolarAngle={Math.PI * .5}
-    />
-</PerspectiveCamera>
+<GLTF 
+    url="/laptop.glb" 
+    rotation={{y: Math.sin(Math.PI * .5 * spin)}}
+    scale={.8}
+/>
+<GLTF 
+    url="/monitor.glb" 
+    scale={.5}
+    position={{y: -1.5}}
+    rotation={{y: Math.cos(Math.PI * .5 * spin)}}
+/>
+
+<PerspectiveCamera position={{z: 5}} />

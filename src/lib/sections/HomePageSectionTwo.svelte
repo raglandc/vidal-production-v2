@@ -1,50 +1,10 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import * as SC from 'svelte-cubed';
-	import { DRACOLoader } from 'three/examples/jsm/loaders/DracoLoader.js';
-	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+	import HomePageSceneTwo from "$lib/scenes/HomePageSceneTwo.svelte";
+	import {Canvas} from "@threlte/core"
 	import viewport from "$lib/utils/useViewportAction"
 
-	//Model imports
-	let phoneModel: any;
-	let monitorModel: any;
-	let laptopModel: any;
-	const dracoLoader = new DRACOLoader();
-	const loader = new GLTFLoader();
-	dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
-	dracoLoader.setDecoderConfig({ type: 'js' });
-	loader.setDRACOLoader(dracoLoader);
-
-	onMount(() => {
-		loader.load(
-			'/phone.glb',
-			(gltf) => {
-				phoneModel = gltf;
-			},
-		);
-		loader.load(
-			'/monitor.glb',
-			(gltf) => {
-				monitorModel = gltf;
-			},
-		);
-		loader.load(
-			'/laptop.glb',
-			(gltf) => {
-				laptopModel = gltf;
-			},
-			);
-	});
-
-
-
 	//animation
-	let spin = 0;
 	let animation = false;
-
-	SC.onFrame(() => {
-		spin += 0.002;
-	});
 </script>
 
 <section>
@@ -57,31 +17,9 @@
 	<p class={animation ? "text-animation": ""}>Websites that work on any device size</p>
 	<p class={animation ? "text-animation": ""}>Mobile, laptops & desktops</p>
 	<div class="three-d">
-		<SC.Canvas antialias alpha>
-			<SC.PerspectiveCamera position={[0, 0, 4]}/>
-			<SC.PointLight position={[0, 7, 1]} color="#f5f3ff"/>
-			<SC.AmbientLight color="#f5f3ff"/>
-			{#if phoneModel && monitorModel && laptopModel}
-				<SC.Primitive
-					scale={1}
-					object={phoneModel.scene}
-					rotation={[0, spin * 5, Math.PI * 0.1]}
-					position={[0,1.2,0]}
-				/>
-				<SC.Primitive
-					scale={0.5}
-					object={laptopModel.scene}
-					rotation={[0, Math.sin(Math.PI * spin * .25), 0]}
-					position={[0,0,0]}
-				/>
-				<SC.Primitive
-					scale={0.4}
-					object={monitorModel.scene}
-					rotation={[0, -Math.sin(Math.PI * spin * .25), 0]}
-					position={[0,-1.20,0]}
-				/>
-			{/if}
-		</SC.Canvas>
+		<Canvas>
+			<HomePageSceneTwo/>
+		</Canvas>
 	</div>
 </section>
 
