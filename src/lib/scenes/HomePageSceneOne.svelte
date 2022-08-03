@@ -13,12 +13,15 @@
 
 <PointLight position={{x: 0, y: .8, z: 2.3}} power={3}/>/>
 <AmbientLight />
+
 <GLTF 
 dracoDecoderPath='https://www.gstatic.com/draco/v1/decoders/'
 url={"/earth.glb"} 
 rotation={{x:0, y: spin, z: -Math.PI * .18}}
 position={{y: -1}}
-/>
+>
+
+</GLTF>
 <PerspectiveCamera position={{z: 5}}>
     <OrbitControls 
     enableDamping 
@@ -27,3 +30,10 @@ position={{y: -1}}
     minPolarAngle={Math.PI * .5}
     />
 </PerspectiveCamera>
+
+<style>
+    .location-pointer {
+        color: red;
+        font-size: 5rem;
+    }
+</style>

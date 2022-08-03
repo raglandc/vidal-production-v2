@@ -46,7 +46,7 @@
      grid-column: 2 / -2;
      display: grid;
      grid-template-columns: 5% repeat(4, 1fr) 5%;
-     min-height: 80vh;
+     min-height: max-content;
     }
 
     .header-container {
@@ -144,7 +144,7 @@
         }
 
         .header-container {
-            grid-template-columns: 20% repeat(6, 1fr) 20%;
+            grid-template-columns: 30% repeat(6, 1fr) 30%;
             margin: 0 0 5%;
         }
 

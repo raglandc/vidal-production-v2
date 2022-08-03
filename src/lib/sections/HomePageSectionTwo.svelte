@@ -8,7 +8,7 @@
 	let totalScroll = 0;
 
 	$: {
-		if(scrollY > sectionHeight + 15){
+		if(scrollY > sectionHeight + 10){
 			totalScroll = scrollY - sectionHeight;
 		}
 	}
@@ -20,10 +20,15 @@
 <svelte:window bind:scrollY />
 
 <section bind:offsetHeight={sectionHeight}>
-<p class={animation ? "text-animation three-d-span": "three-d-span"}>3D</p>
-<h1 class={animation ? "header-animation" : ""}>DREAM</h1>
-<h1 use:viewport  on:enterViewport={() => animation = true}  class={animation ? "header-animation" : ""}>DESIGN</h1>
-<h1 class={animation ? "header-animation" : ""}>DEVELOP</h1>
+	<p class={animation ? "text-animation three-d-span": "three-d-span"}>3D</p>
+	<h1 class={animation ? "header-animation" : ""}
+		style:transform = "translateX(-{totalScroll * .5}px)"
+		>DREAM</h1>
+	<h1 use:viewport  on:enterViewport={() => animation = true}  class={animation ? "header-animation" : ""}>DESIGN</h1>
+	<h1 class={animation ? "header-animation" : ""}
+		style:transform = "translateX({totalScroll * .5}px)"
+			>DEVELOP
+	</h1>
 	<p class={animation ? "text-animation": ""}>We build fast, modern and creative websites
 	</p>
 	<p class={animation ? "text-animation": ""}>Websites that work on any device size</p>
@@ -69,7 +74,7 @@
 		margin: 0.5rem;
 		color: var(--text-primary);
 		opacity: 0;
-		transition: all 1s ease-in-out;
+		transition: opacity 1s ease-in-out;
 	}
 
 	.header-animation {

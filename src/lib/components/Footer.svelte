@@ -18,10 +18,4 @@
 		background-color: var(--background-color);
 		color: var(--text-primary);
 	}
-
-	@media only screen and (min-width: 1200px){
-		footer {
-			font-size: var(--font-primary-desktop);
-		}
-	}
 </style>
