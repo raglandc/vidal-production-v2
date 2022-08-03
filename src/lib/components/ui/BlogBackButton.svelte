@@ -11,8 +11,8 @@
     button {
         margin: 5% 0;
         padding: 1.2rem;
-        background-color: var(--background-color);
-        color: var(--text-primary);
+        background-color: var(--text-primary);
+        color: var(--background-color);
         border-radius: var(--border-radius);
         border: none;
     }

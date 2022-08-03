@@ -45,6 +45,7 @@
     }
     .card:hover {
         transform: scale(1.01);
+        border: 2px solid var(--primary-color)
     }
     
     h1 {
