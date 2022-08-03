@@ -1,12 +1,14 @@
 <script lang="ts">
-	import {AmbientLight, PointLight, OrbitControls, PerspectiveCamera, useLoader, useFrame} from "@threlte/core";
+	import {AmbientLight, PointLight, OrbitControls, PerspectiveCamera, useFrame} from "@threlte/core";
 	import {GLTF} from "@threlte/extras";
 
     //animation
 	let spin = 0;
+    let planeFlightSpeed = 0;
     
     useFrame(() => {
         spin += 0.0002;
+        planeFlightSpeed += 0.01;
     })
 
 </script>
@@ -19,9 +21,15 @@ dracoDecoderPath='https://www.gstatic.com/draco/v1/decoders/'
 url={"/earth.glb"} 
 rotation={{x:0, y: spin, z: -Math.PI * .18}}
 position={{y: -1}}
->
+/>
+<GLTF 
+dracoDecoderPath='https://www.gstatic.com/draco/v1/decoders/'
+url={"/plane.glb"} 
+rotation={{x:0, y: 0, z: -Math.PI * .18 * planeFlightSpeed}}
+position={{y: -1}}
+/>s
 
-</GLTF>
+
 <PerspectiveCamera position={{z: 5}}>
     <OrbitControls 
     enableDamping 
@@ -30,10 +38,3 @@ position={{y: -1}}
     minPolarAngle={Math.PI * .5}
     />
 </PerspectiveCamera>
-
-<style>
-    .location-pointer {
-        color: red;
-        font-size: 5rem;
-    }
-</style>
