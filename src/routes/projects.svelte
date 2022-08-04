@@ -1,7 +1,6 @@
 <script lang="ts">
 let time = 0;
 let duration: number;
-
 let scrollY = 0;
 
 $: {
@@ -15,20 +14,23 @@ $: {
 
 <svelte:window bind:scrollY />
 
+
+
 <div class="video-container">
     <video
     bind:currentTime={time}
     bind:duration
     preload="metadata"
     muted
-    src="/blenderAnimation.mp4">
+    src="/history-video.mp4">
         <track kind="captions"/>
     </video>
 </div>
 
 <section  class="scroll-container">
-    <div class="heading">
-        <h1>Projects</h1>
+    <div class="heading heading-one">
+        <h1><span style:color="var(--primary-color)">V</span>idal's History</h1>
+        <p>scroll down</p>
     </div>
 </section>
 
@@ -43,12 +45,15 @@ $: {
 
     .heading {
         position: absolute;
-        top: 175px;
         width: 100%;
         text-align: center;
         color: white;
         grid-column: 2 / -2;
         color: #fff;
+    }
+    
+    .heading-one {
+        top: 175px;
     }
 
     .heading h1 {

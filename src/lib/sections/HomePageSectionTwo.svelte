@@ -1,5 +1,5 @@
 <script lang="ts">
-	import HomePageSceneTwo from "$lib/scenes/HomePageSceneTwo.svelte";
+	import HomePageSceneTwo from "$lib/scenes/home-page-scenes/HomePageSceneTwo.svelte";
 	import {Canvas} from "@threlte/core"
 	import viewport from "$lib/utils/useViewportAction"
 

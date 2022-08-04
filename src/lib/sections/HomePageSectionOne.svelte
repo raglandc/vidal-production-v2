@@ -1,6 +1,6 @@
 <script lang="ts">
 	import {Canvas} from "@threlte/core";
-	import HomePageSceneOne from "../scenes/HomePageSceneOne.svelte";
+	import HomePageSceneOne from "../scenes/home-page-scenes/HomePageSceneOne.svelte";
 	import viewport from "$lib/utils/useViewportAction";
 	
 	let animatedHeader = false;

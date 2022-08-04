@@ -25,9 +25,10 @@ position={{y: -1}}
 <GLTF 
 dracoDecoderPath='https://www.gstatic.com/draco/v1/decoders/'
 url={"/plane.glb"} 
-rotation={{x:0, y: 0, z: -Math.PI * .18 * planeFlightSpeed}}
+rotation={{x: .001 * planeFlightSpeed, y: 0, z: -Math.PI * .18 * planeFlightSpeed}}
 position={{y: -1}}
-/>s
+/>
+
 
 
 <PerspectiveCamera position={{z: 5}}>
