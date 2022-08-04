@@ -18,13 +18,13 @@
 
 <GLTF 
 dracoDecoderPath='https://www.gstatic.com/draco/v1/decoders/'
-url={"/earth.glb"} 
+url={"/models/homepage/earth.glb"} 
 rotation={{x:0, y: spin, z: -Math.PI * .18}}
 position={{y: -1}}
 />
 <GLTF 
 dracoDecoderPath='https://www.gstatic.com/draco/v1/decoders/'
-url={"/plane.glb"} 
+url={"/models/homepage/plane.glb"} 
 rotation={{x: .001 * planeFlightSpeed, y: 0, z: -Math.PI * .18 * planeFlightSpeed}}
 position={{y: -1}}
 />

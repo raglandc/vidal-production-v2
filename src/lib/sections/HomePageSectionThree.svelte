@@ -2,6 +2,13 @@
 import VideoCard from "$lib/components/ui/VideoCard.svelte";
 import viewport from "$lib/utils/useViewportAction";
 import Signiture from "../../../static/aboutSig.svelte"
+import SVGCard from "$lib/components/ui/SVGCard.svelte"
+
+import svg from "../../../static/svg/services/services-svg.svg";
+import threeDSvg from "../../../static/svg/services/services-3d.svg";
+import backendSvg from "../../../static/svg/services/services-backend.svg";
+import frontendSvg from "../../../static/svg/services/services-frontend.svg";
+
 
 let animateHeader = false;
 let animateDescription = false;
@@ -10,20 +17,39 @@ let animateDescription = false;
 <section>
     <h1 class={animateHeader ? "heading-animate" : ""} use:viewport
     on:enterViewport = {() => animateHeader = true}
-    >ABOUT</h1>
-
+    >SERVICES</h1>
     <div class="video-card-container">
-        <VideoCard directionStyle="Left" title="FAST" source="../../../static/fast-keyboard.mp4" description="No one wants to wait for a website to load. Vidal uses technology that is lightening fast. Which means happy customers for you! Yay!"/>
+        <VideoCard directionStyle="Left" title="FAST" source="/video/services/fast-keyboard.mp4" description="No one wants to wait for anything to load. Vidal uses technology that is lightening fast. Which means happy customers for you! Yay!"/>
         
-        <VideoCard directionStyle="Right" title="SEO" source="../../../static/seo-video.mp4" description="SEO is what search engines (Google, Bing, Etc.) use to see what your site is all about. Vidal's websites are built to be extremely SEO friendly."/>
+        <VideoCard directionStyle="Right" title="SEO" source="/video/services/seo-video.mp4" description="SEO is what search engines (Google, Bing, Etc.) use to understand what everything on the internet is about. Vidal's products are designed to be extremely SEO friendly."/>
         
-        <VideoCard directionStyle="Left" title="RESPONSIVE" source="../../../static/mobile-video.mp4" description="More people use their phone to surf the web than ever, having a website that works on devices of all sizes is, well, vital. Vidal has you covered."/>
+        <VideoCard directionStyle="Left" title="RESPONSIVE" source="/video/services/mobile-video.mp4" description="More people use their phone to surf the web than ever, having a product that works on devices of all sizes is, well, vital. Vidal has you covered."/>
     </div>
 </section>
+
+<div class="services">
+    <SVGCard 
+    source={svg} svgDescription="svg file art work"
+    description="SVG designs can be scaled to any size without any distortion or pixalation"
+    />
+    <SVGCard 
+    source={threeDSvg} svgDescription="the number 3 and letter D with shadows"
+    description="Three dimensional art can be used for 3D-printing as well as creating imersive experiences on the web"
+    />
+    <SVGCard 
+    source={backendSvg} svgDescription="svg file art work"
+    description="Experience with different API's using Node for the majority of communication"
+    />
+    <SVGCard 
+    source={frontendSvg} svgDescription="svg file art work"
+    description="Experience in the design and development of proffesional UI / UX"
+    />
+</div>
+
 <div class="description-container">
     <div class={animateDescription ? "description-animate description" : "description"} use:viewport on:enterViewport={() => animateDescription=true}>
         <p class="description-text">
-            “Vidal's promise is to deliver high quality websites that scream modern and professional. Vidal adheres to the KISS method while designing: Keep It Simple Stupid.”
+            “Vidal's promise is to deliver high quality work that screams modern and professional. Vidal adheres to the KISS method while designing: Keep It Simple Silly.”
         </p>
         <div class="signiture-container">
             <Signiture />
@@ -39,6 +65,12 @@ let animateDescription = false;
         margin: 15% 0 0;
         grid-column: 1 / -1;
         min-height: 110vh;
+    }
+
+    .services {
+        grid-column: 2 / -2;
+        display: flex;
+        flex-direction: column;
     }
 
 	h1 {
@@ -130,6 +162,12 @@ let animateDescription = false;
         h1{
             font-size: var(--font-h1-desktop);
         }
+
+        .services {
+            margin-top: 5%;
+            flex-direction: row;
+        }
+
         .description {
             font-size: var(--font-primary-desktop);
             width: 50%;

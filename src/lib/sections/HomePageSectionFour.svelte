@@ -25,17 +25,17 @@
     <span use:viewport on:enterViewport={() => {
         animatedCardOne = true;
         }} class={animatedCardOne ? "card-one animated" : "card-one"}>
-        <EmployeeCard role="PRESIDENT" name="Chris" description="Chris founded Vidal with the intention of building beautiful websites that demonstrate the beauty behind simplicity" url="../../static/presidentVidal.jpg" />
+        <EmployeeCard role="PRESIDENT" name="Chris" description="Chris founded Vidal with the intention of building beautiful websites that demonstrate the beauty behind simplicity" url="/images/team/presidentVidal.jpg" />
     </span>
     <span use:viewport on:enterViewport={() => {
         animatedCardTwo = true;
         }} class={animatedCardTwo ? "card-two animated" : "card-two"}>
-        <EmployeeCard role="ENGINEER" name="Chris" description="Chris is a computer science student that enjoys waking up early, listening to music and drinking coffee while building out his imagination with code" url="../../static/engineerVidal.jpg" />
+        <EmployeeCard role="ENGINEER" name="Chris" description="Chris is a computer science student that enjoys waking up early, listening to music and drinking coffee while building out his imagination with code" url="/images/team/engineerVidal.jpg" />
     </span>
     <span use:viewport on:enterViewport={() => {
         animatedCardThree = true;
         }} class={animatedCardThree ? "card-three animated" : "card-three"}>
-        <EmployeeCard role="DESIGNER" name="Chris" description="Chris enjoys designing simple, yet beautiful layouts. Often including fibonacci ratios to appeal to the subconscious perspective" url="../../static/designerVidal.jpg" />
+        <EmployeeCard role="DESIGNER" name="Chris" description="Chris enjoys designing simple, yet beautiful layouts. Often including fibonacci ratios to appeal to the subconscious perspective" url="/images/team/designerVidal.jpg" />
     </span>
 </section>
 

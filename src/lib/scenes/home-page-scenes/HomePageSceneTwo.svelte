@@ -18,20 +18,20 @@
 <AmbientLight />
 <GLTF 
     dracoDecoderPath='https://www.gstatic.com/draco/v1/decoders/'
-    url="/phone.glb" 
+    url="/models/homepage/phone.glb" 
     rotation={{y: spin}}
     position={{x: totalScroll * .001, y: 1.5}}
     scale={1.2}
 />
 <GLTF 
     dracoDecoderPath='https://www.gstatic.com/draco/v1/decoders/'
-    url="/laptop.glb" 
+    url="/models/homepage/laptop.glb" 
     rotation={{y: Math.sin(Math.PI * .5 * spin)}}
     scale={.8}
 />
 <GLTF 
     dracoDecoderPath='https://www.gstatic.com/draco/v1/decoders/'
-    url="/monitor.glb" 
+    url="/models/homepage/monitor.glb" 
     scale={.5}
     position={{x: -totalScroll * .001, y: -1.5}}
     rotation={{y: Math.cos(Math.PI * .5 * spin)}}
