@@ -29,9 +29,9 @@
 		style:transform = "translateX({totalScroll * .5}px)"
 			>DEVELOP
 	</h1>
-	<p class={animation ? "text-animation": ""}>We build fast, modern and creative websites
+	<p class={animation ? "text-animation": ""}>We build fast, modern and creative digital products
 	</p>
-	<p class={animation ? "text-animation": ""}>Websites that work on any device size</p>
+	<p class={animation ? "text-animation": ""}>Our products work on any device</p>
 	<p class={animation ? "text-animation": ""}>Mobile, laptops & desktops</p>
 	<div class="three-d">
 		<Canvas>
