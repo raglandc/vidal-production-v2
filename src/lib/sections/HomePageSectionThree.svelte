@@ -1,13 +1,13 @@
 <script lang="ts">
 import VideoCard from "$lib/components/ui/VideoCard.svelte";
 import viewport from "$lib/utils/useViewportAction";
-import Signiture from "../../../static/aboutSig.svelte"
+import AboutSig from "../components/ui/aboutSig.svelte";
 import SVGCard from "$lib/components/ui/SVGCard.svelte"
 
-import svg from "../../../static/svg/services/services-svg.svg";
-import threeDSvg from "../../../static/svg/services/services-3d.svg";
-import backendSvg from "../../../static/svg/services/services-backend.svg";
-import frontendSvg from "../../../static/svg/services/services-frontend.svg";
+import svg from "/src/svg/services/services-svg.svg";
+import threeDSvg from "/src/svg/services/services-3d.svg";
+import backendSvg from "/src/svg/services/services-backend.svg";
+import frontendSvg from "/src/svg/services/services-frontend.svg";
 
 
 let animateHeader = false;
@@ -30,11 +30,11 @@ let animateDescription = false;
 <div class="services">
     <SVGCard 
     source={svg} svgDescription="svg file art work"
-    description="SVG designs can be scaled to any size without any distortion or pixalation"
+    description="SVG designs can be scaled to any size without any distortion or pixalation. Perfect for your buissness logo"
     />
     <SVGCard 
     source={threeDSvg} svgDescription="the number 3 and letter D with shadows"
-    description="Three dimensional art can be used for 3D-printing as well as creating imersive experiences on the web"
+    description="Three dimensional art can be used for 3D-printing as well as creating imersive experiences on the web. Incase you need to show off your product to your customers on your website"
     />
     <SVGCard 
     source={backendSvg} svgDescription="svg file art work"
@@ -52,7 +52,7 @@ let animateDescription = false;
             “Vidal's promise is to deliver high quality work that screams modern and professional. Vidal adheres to the KISS method while designing: Keep It Simple Silly.”
         </p>
         <div class="signiture-container">
-            <Signiture />
+            <AboutSig />
             <p class="president">President</p>
         </div>
     </div>
