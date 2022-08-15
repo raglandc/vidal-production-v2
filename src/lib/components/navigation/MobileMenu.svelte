@@ -33,8 +33,8 @@
 				<PenIcon />
 			</div>
 		</a>
-		<a href="/projects" on:click={handleClick}>
-			<span>Projects</span>
+		<a href="/about" on:click={handleClick}>
+			<span>About</span>
 			<div class="icon">
 				<CodeIcon />
 			</div>

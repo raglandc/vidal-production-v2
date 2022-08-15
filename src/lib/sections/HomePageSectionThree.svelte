@@ -30,19 +30,19 @@ let animateDescription = false;
 <div class="services">
     <SVGCard 
     source={svg} svgDescription="svg file art work"
-    description="SVG designs can be scaled to any size without any distortion or pixalation. Perfect for your buissness logo"
+    description="Vidals designs are created in SVG files. These files can be scaled to any size without any distortion or pixalation. Perfect for your buissness logo"
     />
     <SVGCard 
     source={threeDSvg} svgDescription="the number 3 and letter D with shadows"
-    description="Three dimensional art can be used for 3D-printing as well as creating imersive experiences on the web. Incase you need to show off your product to your customers on your website"
+    description="We create 3D scenes and models. These models and scenes can be used for 3D-printing as well as creating imersive experiences on the web. Incase you need to show off your product to your customers on your website"
     />
     <SVGCard 
     source={backendSvg} svgDescription="svg file art work"
-    description="Experience with different API's using Node for the majority of communication"
+    description="Experience with different API's using Node for the majority of communication, including databases, third-party API's for authentication, ect."
     />
     <SVGCard 
     source={frontendSvg} svgDescription="svg file art work"
-    description="Experience in the design and development of proffesional UI / UX"
+    description="Experience in the design and development of proffesional UI / UX. In addition to developing online immersive 2D and 3D experiences."
     />
 </div>
 

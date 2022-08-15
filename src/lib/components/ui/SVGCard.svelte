@@ -44,6 +44,7 @@ on:enterViewport = {() => animate = true}
 
     p {
         padding: 0 5%;
+        line-height: 1.5;
         max-width: 80%;
         font-size: var(--font-primary-mobile);
         color: var(--text-secondary);

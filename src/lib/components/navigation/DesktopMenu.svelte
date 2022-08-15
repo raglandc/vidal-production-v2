@@ -5,7 +5,7 @@
 <div>
 	<a class={$page.routeId === "" ? "active" : ""} href="/">Home</a>
 	<a class={$page.routeId === "blog" ? "active" : ""} href="/blog">Blog</a>
-	<a class={$page.routeId === "projects" ? "active" : ""} href="/projects">Projects</a>
+	<a class={$page.routeId === "about" ? "active" : ""} href="/about">About</a>
 </div>
 
 <style>
