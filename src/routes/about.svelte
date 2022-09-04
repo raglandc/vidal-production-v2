@@ -1,80 +1,51 @@
 <script lang="ts">
-let time = 0;
-let duration: number;
-let scrollY = 0;
 
-$: {
-    const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-
-    time = duration * (scrollY / totalScroll);
-}
-
+import {Canvas} from "@threlte/core"
+import AboutPageScene from "$lib/scenes/about-page-scenes/AboutPageScene.svelte";
 
 </script>
 
-<svelte:window bind:scrollY />
 
-
-
-<div class="video-container">
-    <video
-    bind:currentTime={time}
-    bind:duration
-    preload="metadata"
-    muted
-    src="/history-video.mp4">
-        <track kind="captions"/>
-    </video>
-</div>
-
-<section  class="scroll-container">
-    <div class="heading heading-one">
-        <h1><span style:color="var(--primary-color)">V</span>idal's History</h1>
-        <p>scroll down</p>
+<div class="about-container">
+        <h1>About</h1>
+        <p>Chris was born in Indiana. During his senior year of highschool he obtained his EMT (Emergency Medical Technician) license at the age of 18 before moving to Florida at the age of 19.</p>
+        <p>It was in Florida where Chris discovered his passion for writing and building with code. Compleatly changning where he thought his life was going.</p>
+        <p>At the time of writing, Chris attends the University of South Florida as a Computer Science major.</p>
     </div>
-</section>
-
+    <div class="container">
+    <Canvas>
+        <AboutPageScene/>
+    </Canvas>
+</div>
 
 
 <style>
-    .scroll-container {
-        position: relative;
-        height: 5000px;
+    .container {
+        min-height: 100vh;
         grid-column: 1 / -1;
     }
 
-    .heading {
-        position: absolute;
-        width: 100%;
-        text-align: center;
-        color: white;
+    .about-container {
         grid-column: 2 / -2;
-        color: #fff;
-    }
-    
-    .heading-one {
-        top: 175px;
     }
 
-    .heading h1 {
+    h1 {
         font-size: var(--font-h1-mobile);
     }
 
-    .video-container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    overflow: hidden;
+    p {
+        line-height: 1.5;
+        font-size: var(--font-primary-mobile);
     }
-    .video-container video {
-        z-index: -1;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+
+    @media only screen and (min-width: 1200px){
+        h1 {
+            font-size: var(--font-h1-desktop);
+        }
+
+        p {
+            font-size: var(--font-primary-desktop);
+        }
+    }
+
 </style>
